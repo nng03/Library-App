@@ -10,6 +10,11 @@
 
 @implementation AppDelegate
 
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -41,6 +46,125 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+// 1
+- (NSManagedObjectContext *) managedObjectContext
+{
+    if (_managedObjectContext != nil)
+    {
+        return _managedObjectContext;
+    }
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if (coordinator != nil)
+    {
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator: coordinator];
+    }
+    
+    return _managedObjectContext;
+}
+
+//2
+- (NSManagedObjectModel *)managedObjectModel
+{
+    if (_managedObjectModel != nil)
+    {
+        return _managedObjectModel;
+    }
+    _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    
+    return _managedObjectModel;
+}
+
+//3
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+    if (_persistentStoreCoordinator != nil)
+    {
+        return _persistentStoreCoordinator;
+    }
+    NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory]
+                                               stringByAppendingPathComponent: @"Textbooks.sqlite"]];
+    NSError *error = nil;
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
+                                   initWithManagedObjectModel:[self managedObjectModel]];
+    if(![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                  configuration:nil URL:storeUrl options:nil error:&error]) {
+        /*Error for store creation should be handled in here*/
+    }
+    
+    return _persistentStoreCoordinator;
+}
+
+- (NSString *)applicationDocumentsDirectory
+{
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+- (NSMutableArray *)getAllTextbooks
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Textbook"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedTextbooks = [self.managedObjectContext executeFetchRequest:fetchRequest
+                                                                         error:&error];
+    NSMutableArray *books = [[NSMutableArray alloc] initWithArray:fetchedTextbooks];
+    return books;
+}
+
+- (NSMutableArray *)getAllAuthors
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Authors"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedAuthors = [self.managedObjectContext executeFetchRequest:fetchRequest
+                                                                         error:&error];
+    NSMutableArray *authors = [[NSMutableArray alloc] initWithArray:fetchedAuthors];
+    return authors;
+}
+
+- (NSMutableArray *)getAllCourses
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Courses"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedCourses = [self.managedObjectContext executeFetchRequest:fetchRequest
+                                                                         error:&error];
+    NSMutableArray *courses = [[NSMutableArray alloc] initWithArray:fetchedCourses];
+    return courses;
+}
+
+- (NSMutableArray *)getAllAuthor_Books
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Author_Textbook"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedAuthor_Textbook = [self.managedObjectContext executeFetchRequest:fetchRequest
+                                                                         error:&error];
+    NSMutableArray *author_books = [[NSMutableArray alloc] initWithArray:fetchedAuthor_Textbook];
+    return author_books;
+}
+
+- (NSMutableArray *)getAllCourse_Books
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Course_Textbook"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedCourse_Textbook = [self.managedObjectContext executeFetchRequest:fetchRequest
+                                                                         error:&error];
+    NSMutableArray *course_book = [[NSMutableArray alloc] initWithArray:fetchedCourse_Textbook];
+    return course_book;
 }
 
 @end

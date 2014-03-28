@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Author_Textbook" representedClassName="Author_Textbook" syncable="YES">
+        <attribute name="author_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="textbook_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Authors" inverseName="textbook" inverseEntity="Authors" syncable="YES"/>
+        <relationship name="textbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Textbook" inverseName="author" inverseEntity="Textbook" syncable="YES"/>
+    </entity>
+    <entity name="Authors" representedClassName="Authors" syncable="YES">
+        <attribute name="idd" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="textbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author_Textbook" inverseName="author" inverseEntity="Author_Textbook" syncable="YES"/>
+    </entity>
+    <entity name="Course_Textbook" representedClassName="Course_Textbook" syncable="YES">
+        <attribute name="class_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="textbook_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Courses" inverseName="textbook" inverseEntity="Courses" syncable="YES"/>
+        <relationship name="textbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Textbook" inverseName="course" inverseEntity="Textbook" syncable="YES"/>
+    </entity>
+    <entity name="Courses" representedClassName="Courses" syncable="YES">
+        <attribute name="course_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="course_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="textbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course_Textbook" inverseName="course" inverseEntity="Course_Textbook" syncable="YES"/>
+    </entity>
+    <entity name="Textbook" representedClassName="Textbook" syncable="YES">
+        <attribute name="cover_image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="isbn" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author_Textbook" inverseName="textbook" inverseEntity="Author_Textbook" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course_Textbook" inverseName="textbook" inverseEntity="Course_Textbook" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Author_Textbook" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Authors" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Course_Textbook" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Courses" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Textbook" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

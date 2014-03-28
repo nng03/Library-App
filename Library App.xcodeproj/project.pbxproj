@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA098CB518C1093200A41031 /* TextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA098CB418C1093200A41031 /* TextbookVC.m */; };
+		EA098CBF18C11FD200A41031 /* TextbooksClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA098CBE18C11FD200A41031 /* TextbooksClassVC.m */; };
+		EA2BEA6D18B80C1200970E8E /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BEA6C18B80C1200970E8E /* MainMenuVC.m */; };
+		EA35E63018A2B4FE0087CE4F /* DetailedRSSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */; };
+		EA35FAD918A05B59008A36E3 /* RSSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA35FAD818A05B59008A36E3 /* RSSVC.m */; };
+		EA3A4978189C294C00EFD00E /* GoogleCal.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3A4977189C294C00EFD00E /* GoogleCal.m */; };
 		EA5D58A21896FF39005A9C47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D58A11896FF39005A9C47 /* Foundation.framework */; };
 		EA5D58A41896FF39005A9C47 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D58A31896FF39005A9C47 /* CoreGraphics.framework */; };
 		EA5D58A61896FF39005A9C47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D58A51896FF39005A9C47 /* UIKit.framework */; };
@@ -14,13 +20,33 @@
 		EA5D58AE1896FF39005A9C47 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D58AD1896FF39005A9C47 /* main.m */; };
 		EA5D58B21896FF39005A9C47 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D58B11896FF39005A9C47 /* AppDelegate.m */; };
 		EA5D58B51896FF39005A9C47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5D58B31896FF39005A9C47 /* Main.storyboard */; };
-		EA5D58B81896FF39005A9C47 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D58B71896FF39005A9C47 /* ViewController.m */; };
 		EA5D58BA1896FF39005A9C47 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5D58B91896FF39005A9C47 /* Images.xcassets */; };
 		EA5D58C11896FF39005A9C47 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D58C01896FF39005A9C47 /* XCTest.framework */; };
 		EA5D58C21896FF39005A9C47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D58A11896FF39005A9C47 /* Foundation.framework */; };
 		EA5D58C31896FF39005A9C47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D58A51896FF39005A9C47 /* UIKit.framework */; };
 		EA5D58CB1896FF39005A9C47 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA5D58C91896FF39005A9C47 /* InfoPlist.strings */; };
 		EA5D58CD1896FF39005A9C47 /* Library_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D58CC1896FF39005A9C47 /* Library_AppTests.m */; };
+		EA5D58D8189700AD005A9C47 /* HoursVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5D58D7189700AD005A9C47 /* HoursVC.m */; };
+		EA5E3F9918C135B5000064D6 /* TextbookTBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5E3F9818C135B5000064D6 /* TextbookTBVC.m */; };
+		EA67846718BBE41F00BAF544 /* Textbooks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA67846518BBE41F00BAF544 /* Textbooks.xcdatamodeld */; };
+		EA67846918BBE68A00BAF544 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA67846818BBE68A00BAF544 /* CoreData.framework */; };
+		EA6C8AA918CA7755005EFBE7 /* TextbookC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6C8AA818CA7755005EFBE7 /* TextbookC.m */; };
+		EA7FAD4518A2AB3D007612DA /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD3A18A2AB3D007612DA /* MWFeedParser.m */; };
+		EA7FAD4618A2AB3D007612DA /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD3C18A2AB3D007612DA /* MWFeedInfo.m */; };
+		EA7FAD4718A2AB3D007612DA /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD3E18A2AB3D007612DA /* MWFeedItem.m */; };
+		EA7FAD4818A2AB3D007612DA /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD4018A2AB3D007612DA /* NSString+HTML.m */; };
+		EA7FAD4918A2AB3D007612DA /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD4218A2AB3D007612DA /* NSDate+InternetDateTime.m */; };
+		EA7FAD4A18A2AB3D007612DA /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD4418A2AB3D007612DA /* GTMNSString+HTML.m */; };
+		EA87367A18D7996E002EF060 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA87367118D79880002EF060 /* libMailCore-ios.a */; };
+		EA90142518CA761600790BBE /* Authors.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90142418CA761600790BBE /* Authors.m */; };
+		EA90142818CA761600790BBE /* Course_Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90142718CA761600790BBE /* Course_Textbook.m */; };
+		EA90142B18CA761600790BBE /* Courses.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90142A18CA761600790BBE /* Courses.m */; };
+		EA90142E18CA761600790BBE /* Author_Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90142D18CA761600790BBE /* Author_Textbook.m */; };
+		EA90143118CA761700790BBE /* Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90143018CA761700790BBE /* Textbook.m */; };
+		EAB420F518A57979000A1831 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F418A57979000A1831 /* CFNetwork.framework */; };
+		EAB420F718A57981000A1831 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F618A57981000A1831 /* Security.framework */; };
+		EAB81E8D18D37864001BBE11 /* CreateTextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB81E8C18D37864001BBE11 /* CreateTextbookVC.m */; };
+		EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,9 +57,63 @@
 			remoteGlobalIDString = EA5D589D1896FF39005A9C47;
 			remoteInfo = "Library App";
 		};
+		EA87366E18D79880002EF060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA87366618D79880002EF060 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA537169E772200778456;
+			remoteInfo = "static mailcore2 osx";
+		};
+		EA87367018D79880002EF060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA87366618D79880002EF060 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BA2C191705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
+		};
+		EA87367218D79880002EF060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA87366618D79880002EF060 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C64EA78C169F259200778456;
+			remoteInfo = tests;
+		};
+		EA87367418D79880002EF060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA87366618D79880002EF060 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6A81B911706840C00882C15;
+			remoteInfo = "test-ios";
+		};
+		EA87367618D79880002EF060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA87366618D79880002EF060 /* mailcore2.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C6BD288D170BD71100A91AC1;
+			remoteInfo = "mailcore osx";
+		};
+		EA87367818D7993A002EF060 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA87366618D79880002EF060 /* mailcore2.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C6BA2B091705F4E6003F0E9E;
+			remoteInfo = "static mailcore2 ios";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA098CB318C1093200A41031 /* TextbookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextbookVC.h; sourceTree = "<group>"; };
+		EA098CB418C1093200A41031 /* TextbookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextbookVC.m; sourceTree = "<group>"; };
+		EA098CBD18C11FD200A41031 /* TextbooksClassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextbooksClassVC.h; sourceTree = "<group>"; };
+		EA098CBE18C11FD200A41031 /* TextbooksClassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextbooksClassVC.m; sourceTree = "<group>"; };
+		EA2BEA6B18B80C1200970E8E /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
+		EA2BEA6C18B80C1200970E8E /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
+		EA35E62E18A2B4FE0087CE4F /* DetailedRSSVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedRSSVC.h; sourceTree = "<group>"; };
+		EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedRSSVC.m; sourceTree = "<group>"; };
+		EA35FAD718A05B59008A36E3 /* RSSVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSVC.h; sourceTree = "<group>"; };
+		EA35FAD818A05B59008A36E3 /* RSSVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSVC.m; sourceTree = "<group>"; };
+		EA3A4976189C294C00EFD00E /* GoogleCal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleCal.h; sourceTree = "<group>"; };
+		EA3A4977189C294C00EFD00E /* GoogleCal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleCal.m; sourceTree = "<group>"; };
 		EA5D589E1896FF39005A9C47 /* Library App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Library App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5D58A11896FF39005A9C47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA5D58A31896FF39005A9C47 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +125,50 @@
 		EA5D58B01896FF39005A9C47 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA5D58B11896FF39005A9C47 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EA5D58B41896FF39005A9C47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EA5D58B61896FF39005A9C47 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EA5D58B71896FF39005A9C47 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EA5D58B91896FF39005A9C47 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EA5D58BF1896FF39005A9C47 /* Library AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Library AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5D58C01896FF39005A9C47 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EA5D58C81896FF39005A9C47 /* Library AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Library AppTests-Info.plist"; sourceTree = "<group>"; };
 		EA5D58CA1896FF39005A9C47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EA5D58CC1896FF39005A9C47 /* Library_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Library_AppTests.m; sourceTree = "<group>"; };
+		EA5D58D6189700AD005A9C47 /* HoursVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoursVC.h; sourceTree = "<group>"; };
+		EA5D58D7189700AD005A9C47 /* HoursVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoursVC.m; sourceTree = "<group>"; };
+		EA5E3F9718C135B5000064D6 /* TextbookTBVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextbookTBVC.h; sourceTree = "<group>"; };
+		EA5E3F9818C135B5000064D6 /* TextbookTBVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextbookTBVC.m; sourceTree = "<group>"; };
+		EA67846618BBE41F00BAF544 /* Textbooks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Textbooks.xcdatamodel; sourceTree = "<group>"; };
+		EA67846818BBE68A00BAF544 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EA6C8AA718CA7755005EFBE7 /* TextbookC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextbookC.h; sourceTree = "<group>"; };
+		EA6C8AA818CA7755005EFBE7 /* TextbookC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextbookC.m; sourceTree = "<group>"; };
+		EA7FAD3818A2AB3D007612DA /* MWFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser.h; sourceTree = "<group>"; };
+		EA7FAD3918A2AB3D007612DA /* MWFeedParser_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Private.h; sourceTree = "<group>"; };
+		EA7FAD3A18A2AB3D007612DA /* MWFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedParser.m; sourceTree = "<group>"; };
+		EA7FAD3B18A2AB3D007612DA /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
+		EA7FAD3C18A2AB3D007612DA /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
+		EA7FAD3D18A2AB3D007612DA /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
+		EA7FAD3E18A2AB3D007612DA /* MWFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedItem.m; sourceTree = "<group>"; };
+		EA7FAD3F18A2AB3D007612DA /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		EA7FAD4018A2AB3D007612DA /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		EA7FAD4118A2AB3D007612DA /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		EA7FAD4218A2AB3D007612DA /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
+		EA7FAD4318A2AB3D007612DA /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		EA7FAD4418A2AB3D007612DA /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		EA87366618D79880002EF060 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../../mailcore2-master/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
+		EA90142318CA761600790BBE /* Authors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authors.h; sourceTree = "<group>"; };
+		EA90142418CA761600790BBE /* Authors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authors.m; sourceTree = "<group>"; };
+		EA90142618CA761600790BBE /* Course_Textbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course_Textbook.h; sourceTree = "<group>"; };
+		EA90142718CA761600790BBE /* Course_Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course_Textbook.m; sourceTree = "<group>"; };
+		EA90142918CA761600790BBE /* Courses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Courses.h; sourceTree = "<group>"; };
+		EA90142A18CA761600790BBE /* Courses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Courses.m; sourceTree = "<group>"; };
+		EA90142C18CA761600790BBE /* Author_Textbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author_Textbook.h; sourceTree = "<group>"; };
+		EA90142D18CA761600790BBE /* Author_Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author_Textbook.m; sourceTree = "<group>"; };
+		EA90142F18CA761700790BBE /* Textbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Textbook.h; sourceTree = "<group>"; };
+		EA90143018CA761700790BBE /* Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Textbook.m; sourceTree = "<group>"; };
+		EAB420F418A57979000A1831 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EAB420F618A57981000A1831 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EAB81E8B18D37864001BBE11 /* CreateTextbookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateTextbookVC.h; path = ../CreateTextbookVC.h; sourceTree = "<group>"; };
+		EAB81E8C18D37864001BBE11 /* CreateTextbookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateTextbookVC.m; path = ../CreateTextbookVC.m; sourceTree = "<group>"; };
+		EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
+		EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +176,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB420F718A57981000A1831 /* Security.framework in Frameworks */,
+				EAB420F518A57979000A1831 /* CFNetwork.framework in Frameworks */,
+				EA87367A18D7996E002EF060 /* libMailCore-ios.a in Frameworks */,
+				EA67846918BBE68A00BAF544 /* CoreData.framework in Frameworks */,
 				EA5D58A41896FF39005A9C47 /* CoreGraphics.framework in Frameworks */,
 				EA5D58A61896FF39005A9C47 /* UIKit.framework in Frameworks */,
 				EA5D58A21896FF39005A9C47 /* Foundation.framework in Frameworks */,
@@ -79,6 +199,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA29131718A2A3E600CC0CFD /* RSS Feed */ = {
+			isa = PBXGroup;
+			children = (
+				EA7FAD3818A2AB3D007612DA /* MWFeedParser.h */,
+				EA7FAD3918A2AB3D007612DA /* MWFeedParser_Private.h */,
+				EA7FAD3A18A2AB3D007612DA /* MWFeedParser.m */,
+				EA7FAD3B18A2AB3D007612DA /* MWFeedInfo.h */,
+				EA7FAD3C18A2AB3D007612DA /* MWFeedInfo.m */,
+				EA7FAD3D18A2AB3D007612DA /* MWFeedItem.h */,
+				EA7FAD3E18A2AB3D007612DA /* MWFeedItem.m */,
+				EA7FAD3F18A2AB3D007612DA /* NSString+HTML.h */,
+				EA7FAD4018A2AB3D007612DA /* NSString+HTML.m */,
+				EA7FAD4118A2AB3D007612DA /* NSDate+InternetDateTime.h */,
+				EA7FAD4218A2AB3D007612DA /* NSDate+InternetDateTime.m */,
+				EA7FAD4318A2AB3D007612DA /* GTMNSString+HTML.h */,
+				EA7FAD4418A2AB3D007612DA /* GTMNSString+HTML.m */,
+			);
+			name = "RSS Feed";
+			sourceTree = "<group>";
+		};
 		EA5D58951896FF39005A9C47 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +241,9 @@
 		EA5D58A01896FF39005A9C47 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA67846818BBE68A00BAF544 /* CoreData.framework */,
+				EAB420F618A57981000A1831 /* Security.framework */,
+				EAB420F418A57979000A1831 /* CFNetwork.framework */,
 				EA5D58A11896FF39005A9C47 /* Foundation.framework */,
 				EA5D58A31896FF39005A9C47 /* CoreGraphics.framework */,
 				EA5D58A51896FF39005A9C47 /* UIKit.framework */,
@@ -112,12 +255,40 @@
 		EA5D58A71896FF39005A9C47 /* Library App */ = {
 			isa = PBXGroup;
 			children = (
+				EA87366618D79880002EF060 /* mailcore2.xcodeproj */,
+				EA63478118CA5A2300BEFDC3 /* Unused For now */,
+				EA29131718A2A3E600CC0CFD /* RSS Feed */,
 				EA5D58B01896FF39005A9C47 /* AppDelegate.h */,
 				EA5D58B11896FF39005A9C47 /* AppDelegate.m */,
 				EA5D58B31896FF39005A9C47 /* Main.storyboard */,
-				EA5D58B61896FF39005A9C47 /* ViewController.h */,
-				EA5D58B71896FF39005A9C47 /* ViewController.m */,
+				EA2BEA6B18B80C1200970E8E /* MainMenuVC.h */,
+				EA2BEA6C18B80C1200970E8E /* MainMenuVC.m */,
+				EA5D58D6189700AD005A9C47 /* HoursVC.h */,
+				EA5D58D7189700AD005A9C47 /* HoursVC.m */,
+				EA3A4976189C294C00EFD00E /* GoogleCal.h */,
+				EA3A4977189C294C00EFD00E /* GoogleCal.m */,
+				EA35FAD718A05B59008A36E3 /* RSSVC.h */,
+				EA35FAD818A05B59008A36E3 /* RSSVC.m */,
+				EA35E62E18A2B4FE0087CE4F /* DetailedRSSVC.h */,
+				EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */,
+				EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */,
+				EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */,
+				EA6C8AA718CA7755005EFBE7 /* TextbookC.h */,
+				EA6C8AA818CA7755005EFBE7 /* TextbookC.m */,
+				EAB81E8B18D37864001BBE11 /* CreateTextbookVC.h */,
+				EAB81E8C18D37864001BBE11 /* CreateTextbookVC.m */,
 				EA5D58B91896FF39005A9C47 /* Images.xcassets */,
+				EA67846518BBE41F00BAF544 /* Textbooks.xcdatamodeld */,
+				EA90142F18CA761700790BBE /* Textbook.h */,
+				EA90143018CA761700790BBE /* Textbook.m */,
+				EA90142C18CA761600790BBE /* Author_Textbook.h */,
+				EA90142D18CA761600790BBE /* Author_Textbook.m */,
+				EA90142918CA761600790BBE /* Courses.h */,
+				EA90142A18CA761600790BBE /* Courses.m */,
+				EA90142618CA761600790BBE /* Course_Textbook.h */,
+				EA90142718CA761600790BBE /* Course_Textbook.m */,
+				EA90142318CA761600790BBE /* Authors.h */,
+				EA90142418CA761600790BBE /* Authors.m */,
 				EA5D58A81896FF39005A9C47 /* Supporting Files */,
 			);
 			path = "Library App";
@@ -152,6 +323,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EA63478118CA5A2300BEFDC3 /* Unused For now */ = {
+			isa = PBXGroup;
+			children = (
+				EA098CB318C1093200A41031 /* TextbookVC.h */,
+				EA098CB418C1093200A41031 /* TextbookVC.m */,
+				EA098CBD18C11FD200A41031 /* TextbooksClassVC.h */,
+				EA098CBE18C11FD200A41031 /* TextbooksClassVC.m */,
+				EA5E3F9718C135B5000064D6 /* TextbookTBVC.h */,
+				EA5E3F9818C135B5000064D6 /* TextbookTBVC.m */,
+			);
+			name = "Unused For now";
+			sourceTree = "<group>";
+		};
+		EA87366718D79880002EF060 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA87366F18D79880002EF060 /* libMailCore.a */,
+				EA87367118D79880002EF060 /* libMailCore-ios.a */,
+				EA87367318D79880002EF060 /* tests */,
+				EA87367518D79880002EF060 /* test-ios.app */,
+				EA87367718D79880002EF060 /* MailCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,6 +362,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EA87367918D7993A002EF060 /* PBXTargetDependency */,
 			);
 			name = "Library App";
 			productName = "Library App";
@@ -196,9 +393,12 @@
 		EA5D58961896FF39005A9C47 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Nick;
 				TargetAttributes = {
+					EA5D589D1896FF39005A9C47 = {
+						DevelopmentTeam = SLJ5RC2A7J;
+					};
 					EA5D58BE1896FF39005A9C47 = {
 						TestTargetID = EA5D589D1896FF39005A9C47;
 					};
@@ -215,6 +415,12 @@
 			mainGroup = EA5D58951896FF39005A9C47;
 			productRefGroup = EA5D589F1896FF39005A9C47 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EA87366718D79880002EF060 /* Products */;
+					ProjectRef = EA87366618D79880002EF060 /* mailcore2.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EA5D589D1896FF39005A9C47 /* Library App */,
@@ -222,6 +428,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EA87366F18D79880002EF060 /* libMailCore.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMailCore.a;
+			remoteRef = EA87366E18D79880002EF060 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA87367118D79880002EF060 /* libMailCore-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libMailCore-ios.a";
+			remoteRef = EA87367018D79880002EF060 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA87367318D79880002EF060 /* tests */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = tests;
+			remoteRef = EA87367218D79880002EF060 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA87367518D79880002EF060 /* test-ios.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "test-ios.app";
+			remoteRef = EA87367418D79880002EF060 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA87367718D79880002EF060 /* MailCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MailCore.framework;
+			remoteRef = EA87367618D79880002EF060 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EA5D589C1896FF39005A9C47 /* Resources */ = {
@@ -249,8 +493,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA5D58B81896FF39005A9C47 /* ViewController.m in Sources */,
+				EA90142818CA761600790BBE /* Course_Textbook.m in Sources */,
+				EA35E63018A2B4FE0087CE4F /* DetailedRSSVC.m in Sources */,
+				EA3A4978189C294C00EFD00E /* GoogleCal.m in Sources */,
+				EA7FAD4818A2AB3D007612DA /* NSString+HTML.m in Sources */,
+				EAB81E8D18D37864001BBE11 /* CreateTextbookVC.m in Sources */,
+				EA7FAD4518A2AB3D007612DA /* MWFeedParser.m in Sources */,
+				EA2BEA6D18B80C1200970E8E /* MainMenuVC.m in Sources */,
+				EA90142518CA761600790BBE /* Authors.m in Sources */,
+				EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */,
+				EA7FAD4718A2AB3D007612DA /* MWFeedItem.m in Sources */,
+				EA6C8AA918CA7755005EFBE7 /* TextbookC.m in Sources */,
+				EA7FAD4A18A2AB3D007612DA /* GTMNSString+HTML.m in Sources */,
+				EA90142E18CA761600790BBE /* Author_Textbook.m in Sources */,
+				EA7FAD4618A2AB3D007612DA /* MWFeedInfo.m in Sources */,
+				EA35FAD918A05B59008A36E3 /* RSSVC.m in Sources */,
+				EA098CBF18C11FD200A41031 /* TextbooksClassVC.m in Sources */,
+				EA90143118CA761700790BBE /* Textbook.m in Sources */,
+				EA90142B18CA761600790BBE /* Courses.m in Sources */,
+				EA5E3F9918C135B5000064D6 /* TextbookTBVC.m in Sources */,
+				EA67846718BBE41F00BAF544 /* Textbooks.xcdatamodeld in Sources */,
+				EA7FAD4918A2AB3D007612DA /* NSDate+InternetDateTime.m in Sources */,
 				EA5D58B21896FF39005A9C47 /* AppDelegate.m in Sources */,
+				EA5D58D8189700AD005A9C47 /* HoursVC.m in Sources */,
+				EA098CB518C1093200A41031 /* TextbookVC.m in Sources */,
 				EA5D58AE1896FF39005A9C47 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +536,11 @@
 			isa = PBXTargetDependency;
 			target = EA5D589D1896FF39005A9C47 /* Library App */;
 			targetProxy = EA5D58C41896FF39005A9C47 /* PBXContainerItemProxy */;
+		};
+		EA87367918D7993A002EF060 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "static mailcore2 ios";
+			targetProxy = EA87367818D7993A002EF060 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -305,7 +576,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -318,6 +588,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -344,7 +615,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -357,6 +627,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -378,9 +649,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library App/Library App-Prefix.pch";
 				INFOPLIST_FILE = "Library App/Library App-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-licudata",
+					"-licui18n",
+					"-licuuc",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-licucore",
+					"-lstdc++",
+					"-stdlib=libstdc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -391,9 +680,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library App/Library App-Prefix.pch";
 				INFOPLIST_FILE = "Library App/Library App-Info.plist";
+				OTHER_LDFLAGS = (
+					"-lctemplate-ios",
+					"-letpan-ios",
+					"-licudata",
+					"-licui18n",
+					"-licuuc",
+					"-lxml2",
+					"-lsasl2",
+					"-liconv",
+					"-ltidy",
+					"-lz",
+					"-licucore",
+					"-lstdc++",
+					"-stdlib=libstdc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -402,7 +709,6 @@
 		EA5D58D41896FF39005A9C47 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Library App.app/Library App";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -425,7 +731,6 @@
 		EA5D58D51896FF39005A9C47 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Library App.app/Library App";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -460,6 +765,7 @@
 				EA5D58D21896FF39005A9C47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA5D58D31896FF39005A9C47 /* Build configuration list for PBXNativeTarget "Library AppTests" */ = {
 			isa = XCConfigurationList;
@@ -468,8 +774,22 @@
 				EA5D58D51896FF39005A9C47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EA67846518BBE41F00BAF544 /* Textbooks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EA67846618BBE41F00BAF544 /* Textbooks.xcdatamodel */,
+			);
+			currentVersion = EA67846618BBE41F00BAF544 /* Textbooks.xcdatamodel */;
+			path = Textbooks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EA5D58961896FF39005A9C47 /* Project object */;
 }
