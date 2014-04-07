@@ -14,11 +14,13 @@
 #import "Courses.h"
 #import "Authors.h"
 #import "CreateTextbookVC.h"
+#import "viewTextbook.h"
 
 @interface TextbookC ()
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSMutableArray *textbooks;
+@property (strong, nonatomic) Textbook *currentBook;
 
 @end
 
@@ -40,11 +42,6 @@
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
     self.textbooks = [appDelegate getAllTextbooks];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,10 +113,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Textbook *text = [self.textbooks objectAtIndex:indexPath.row];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:text.title message:[NSString stringWithFormat:@"ISBN: %@\r Author: %@\r Course Name: %@\r Course Code: %@", text.isbn, text.author.author.name, text.course.course.course_name, text.course.course.course_code] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    return;
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    self.currentBook = [self.textbooks objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"viewbook" sender:cell];
+}
+
+- (void)prepareViewTextbookVC:(viewTextbook *)vc forText:(Textbook *)text
+{
+    vc.text = text;
+    vc.managedObjectContext = self.managedObjectContext;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -130,6 +132,10 @@
         CreateTextbookVC *createTextbookVC = [navigationController viewControllers][0];
         createTextbookVC.delegate = self;
         createTextbookVC.managedObjectContext = self.managedObjectContext;
+    }
+    if ([segue.identifier isEqualToString:@"viewbook"])
+    {
+        [self prepareViewTextbookVC:segue.destinationViewController forText:self.currentBook];
     }
 }
 

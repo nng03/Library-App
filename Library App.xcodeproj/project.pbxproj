@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EA098CB518C1093200A41031 /* TextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA098CB418C1093200A41031 /* TextbookVC.m */; };
 		EA098CBF18C11FD200A41031 /* TextbooksClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA098CBE18C11FD200A41031 /* TextbooksClassVC.m */; };
+		EA2AEE9C18E610D7002C95AE /* CreateTextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2AEE9B18E610D7002C95AE /* CreateTextbookVC.m */; };
+		EA2AEE9F18E61354002C95AE /* viewTextbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2AEE9E18E61354002C95AE /* viewTextbook.m */; };
 		EA2BEA6D18B80C1200970E8E /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BEA6C18B80C1200970E8E /* MainMenuVC.m */; };
 		EA35E63018A2B4FE0087CE4F /* DetailedRSSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */; };
 		EA35FAD918A05B59008A36E3 /* RSSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA35FAD818A05B59008A36E3 /* RSSVC.m */; };
@@ -45,8 +47,32 @@
 		EA90143118CA761700790BBE /* Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90143018CA761700790BBE /* Textbook.m */; };
 		EAB420F518A57979000A1831 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F418A57979000A1831 /* CFNetwork.framework */; };
 		EAB420F718A57981000A1831 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F618A57981000A1831 /* Security.framework */; };
-		EAB81E8D18D37864001BBE11 /* CreateTextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB81E8C18D37864001BBE11 /* CreateTextbookVC.m */; };
 		EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */; };
+		EAFFF8D818EF3F0F00510640 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8D318EF3F0F00510640 /* NSObject+SBJSON.m */; };
+		EAFFF8D918EF3F0F00510640 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8D518EF3F0F00510640 /* NSString+SBJSON.m */; };
+		EAFFF8DA18EF3F0F00510640 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8D718EF3F0F00510640 /* SBJSON.m */; };
+		EAFFF8F318EF3F4900510640 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8DD18EF3F4900510640 /* Base64Transcoder.c */; };
+		EAFFF8F418EF3F4900510640 /* NSData+OAuthResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8E018EF3F4900510640 /* NSData+OAuthResponse.m */; };
+		EAFFF8F518EF3F4900510640 /* NSDictionary+QueryString.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8E218EF3F4900510640 /* NSDictionary+QueryString.m */; };
+		EAFFF8F618EF3F4900510640 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8E418EF3F4900510640 /* NSString+URLEncoding.m */; };
+		EAFFF8F718EF3F4900510640 /* YOAuthConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8E718EF3F4900510640 /* YOAuthConsumer.m */; };
+		EAFFF8F818EF3F4900510640 /* YOAuthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8E918EF3F4900510640 /* YOAuthRequest.m */; };
+		EAFFF8F918EF3F4900510640 /* YOAuthSignatureMethod_HMAC-SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8EC18EF3F4900510640 /* YOAuthSignatureMethod_HMAC-SHA1.m */; };
+		EAFFF8FA18EF3F4900510640 /* YOAuthSignatureMethod_PLAINTEXT.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8EE18EF3F4900510640 /* YOAuthSignatureMethod_PLAINTEXT.m */; };
+		EAFFF8FB18EF3F4900510640 /* YOAuthToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8F018EF3F4900510640 /* YOAuthToken.m */; };
+		EAFFF8FC18EF3F4900510640 /* YOAuthUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8F218EF3F4900510640 /* YOAuthUtil.m */; };
+		EAFFF91718EF3F6300510640 /* YOSAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8FF18EF3F6300510640 /* YOSAccessToken.m */; };
+		EAFFF91818EF3F6300510640 /* YOSAuthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF90118EF3F6300510640 /* YOSAuthRequest.m */; };
+		EAFFF91918EF3F6300510640 /* YOSBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF90318EF3F6300510640 /* YOSBaseRequest.m */; };
+		EAFFF91A18EF3F6300510640 /* YOSOpenSocialRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF90518EF3F6300510640 /* YOSOpenSocialRequest.m */; };
+		EAFFF91B18EF3F6300510640 /* YOSRequestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF90718EF3F6300510640 /* YOSRequestClient.m */; };
+		EAFFF91C18EF3F6300510640 /* YOSRequestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF90918EF3F6300510640 /* YOSRequestToken.m */; };
+		EAFFF91D18EF3F6300510640 /* YOSResponseData.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF90B18EF3F6300510640 /* YOSResponseData.m */; };
+		EAFFF91E18EF3F6300510640 /* YOSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF90D18EF3F6300510640 /* YOSSession.m */; };
+		EAFFF91F18EF3F6300510640 /* YOSTokenStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF91018EF3F6300510640 /* YOSTokenStore.m */; };
+		EAFFF92018EF3F6300510640 /* YOSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF91218EF3F6300510640 /* YOSUser.m */; };
+		EAFFF92118EF3F6300510640 /* YOSUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF91418EF3F6300510640 /* YOSUserRequest.m */; };
+		EAFFF92218EF3F6300510640 /* YQLQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF91618EF3F6300510640 /* YQLQueryRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +125,13 @@
 			remoteGlobalIDString = C6BA2B091705F4E6003F0E9E;
 			remoteInfo = "static mailcore2 ios";
 		};
+		EAFFF8C318EF3D6D00510640 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAFFF8BB18EF3D6D00510640 /* YahooSocialSdk.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = YahooSocialSdk;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +139,10 @@
 		EA098CB418C1093200A41031 /* TextbookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextbookVC.m; sourceTree = "<group>"; };
 		EA098CBD18C11FD200A41031 /* TextbooksClassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextbooksClassVC.h; sourceTree = "<group>"; };
 		EA098CBE18C11FD200A41031 /* TextbooksClassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextbooksClassVC.m; sourceTree = "<group>"; };
+		EA2AEE9A18E610D6002C95AE /* CreateTextbookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTextbookVC.h; sourceTree = "<group>"; };
+		EA2AEE9B18E610D7002C95AE /* CreateTextbookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTextbookVC.m; sourceTree = "<group>"; };
+		EA2AEE9D18E61354002C95AE /* viewTextbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viewTextbook.h; sourceTree = "<group>"; };
+		EA2AEE9E18E61354002C95AE /* viewTextbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = viewTextbook.m; sourceTree = "<group>"; };
 		EA2BEA6B18B80C1200970E8E /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
 		EA2BEA6C18B80C1200970E8E /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
 		EA35E62E18A2B4FE0087CE4F /* DetailedRSSVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedRSSVC.h; sourceTree = "<group>"; };
@@ -165,10 +202,63 @@
 		EA90143018CA761700790BBE /* Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Textbook.m; sourceTree = "<group>"; };
 		EAB420F418A57979000A1831 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EAB420F618A57981000A1831 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		EAB81E8B18D37864001BBE11 /* CreateTextbookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateTextbookVC.h; path = ../CreateTextbookVC.h; sourceTree = "<group>"; };
-		EAB81E8C18D37864001BBE11 /* CreateTextbookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateTextbookVC.m; path = ../CreateTextbookVC.m; sourceTree = "<group>"; };
 		EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
 		EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
+		EAFFF8BB18EF3D6D00510640 /* YahooSocialSdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YahooSocialSdk.xcodeproj; path = "../../../yos-social-objc-master/YahooSocialSdk.xcodeproj"; sourceTree = "<group>"; };
+		EAFFF8D118EF3F0F00510640 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		EAFFF8D218EF3F0F00510640 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		EAFFF8D318EF3F0F00510640 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		EAFFF8D418EF3F0F00510640 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		EAFFF8D518EF3F0F00510640 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		EAFFF8D618EF3F0F00510640 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		EAFFF8D718EF3F0F00510640 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		EAFFF8DD18EF3F4900510640 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		EAFFF8DE18EF3F4900510640 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		EAFFF8DF18EF3F4900510640 /* NSData+OAuthResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+OAuthResponse.h"; sourceTree = "<group>"; };
+		EAFFF8E018EF3F4900510640 /* NSData+OAuthResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+OAuthResponse.m"; sourceTree = "<group>"; };
+		EAFFF8E118EF3F4900510640 /* NSDictionary+QueryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+QueryString.h"; sourceTree = "<group>"; };
+		EAFFF8E218EF3F4900510640 /* NSDictionary+QueryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+QueryString.m"; sourceTree = "<group>"; };
+		EAFFF8E318EF3F4900510640 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		EAFFF8E418EF3F4900510640 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		EAFFF8E518EF3F4900510640 /* YOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuth.h; sourceTree = "<group>"; };
+		EAFFF8E618EF3F4900510640 /* YOAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthConsumer.h; sourceTree = "<group>"; };
+		EAFFF8E718EF3F4900510640 /* YOAuthConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthConsumer.m; sourceTree = "<group>"; };
+		EAFFF8E818EF3F4900510640 /* YOAuthRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthRequest.h; sourceTree = "<group>"; };
+		EAFFF8E918EF3F4900510640 /* YOAuthRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthRequest.m; sourceTree = "<group>"; };
+		EAFFF8EA18EF3F4900510640 /* YOAuthSignatureMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthSignatureMethod.h; sourceTree = "<group>"; };
+		EAFFF8EB18EF3F4900510640 /* YOAuthSignatureMethod_HMAC-SHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YOAuthSignatureMethod_HMAC-SHA1.h"; sourceTree = "<group>"; };
+		EAFFF8EC18EF3F4900510640 /* YOAuthSignatureMethod_HMAC-SHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YOAuthSignatureMethod_HMAC-SHA1.m"; sourceTree = "<group>"; };
+		EAFFF8ED18EF3F4900510640 /* YOAuthSignatureMethod_PLAINTEXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthSignatureMethod_PLAINTEXT.h; sourceTree = "<group>"; };
+		EAFFF8EE18EF3F4900510640 /* YOAuthSignatureMethod_PLAINTEXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthSignatureMethod_PLAINTEXT.m; sourceTree = "<group>"; };
+		EAFFF8EF18EF3F4900510640 /* YOAuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthToken.h; sourceTree = "<group>"; };
+		EAFFF8F018EF3F4900510640 /* YOAuthToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthToken.m; sourceTree = "<group>"; };
+		EAFFF8F118EF3F4900510640 /* YOAuthUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOAuthUtil.h; sourceTree = "<group>"; };
+		EAFFF8F218EF3F4900510640 /* YOAuthUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOAuthUtil.m; sourceTree = "<group>"; };
+		EAFFF8FE18EF3F6300510640 /* YOSAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSAccessToken.h; sourceTree = "<group>"; };
+		EAFFF8FF18EF3F6300510640 /* YOSAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSAccessToken.m; sourceTree = "<group>"; };
+		EAFFF90018EF3F6300510640 /* YOSAuthRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSAuthRequest.h; sourceTree = "<group>"; };
+		EAFFF90118EF3F6300510640 /* YOSAuthRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSAuthRequest.m; sourceTree = "<group>"; };
+		EAFFF90218EF3F6300510640 /* YOSBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSBaseRequest.h; sourceTree = "<group>"; };
+		EAFFF90318EF3F6300510640 /* YOSBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSBaseRequest.m; sourceTree = "<group>"; };
+		EAFFF90418EF3F6300510640 /* YOSOpenSocialRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSOpenSocialRequest.h; sourceTree = "<group>"; };
+		EAFFF90518EF3F6300510640 /* YOSOpenSocialRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSOpenSocialRequest.m; sourceTree = "<group>"; };
+		EAFFF90618EF3F6300510640 /* YOSRequestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSRequestClient.h; sourceTree = "<group>"; };
+		EAFFF90718EF3F6300510640 /* YOSRequestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSRequestClient.m; sourceTree = "<group>"; };
+		EAFFF90818EF3F6300510640 /* YOSRequestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSRequestToken.h; sourceTree = "<group>"; };
+		EAFFF90918EF3F6300510640 /* YOSRequestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSRequestToken.m; sourceTree = "<group>"; };
+		EAFFF90A18EF3F6300510640 /* YOSResponseData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSResponseData.h; sourceTree = "<group>"; };
+		EAFFF90B18EF3F6300510640 /* YOSResponseData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSResponseData.m; sourceTree = "<group>"; };
+		EAFFF90C18EF3F6300510640 /* YOSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSSession.h; sourceTree = "<group>"; };
+		EAFFF90D18EF3F6300510640 /* YOSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSSession.m; sourceTree = "<group>"; };
+		EAFFF90E18EF3F6300510640 /* YOSSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSSocial.h; sourceTree = "<group>"; };
+		EAFFF90F18EF3F6300510640 /* YOSTokenStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSTokenStore.h; sourceTree = "<group>"; };
+		EAFFF91018EF3F6300510640 /* YOSTokenStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSTokenStore.m; sourceTree = "<group>"; };
+		EAFFF91118EF3F6300510640 /* YOSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSUser.h; sourceTree = "<group>"; };
+		EAFFF91218EF3F6300510640 /* YOSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSUser.m; sourceTree = "<group>"; };
+		EAFFF91318EF3F6300510640 /* YOSUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSUserRequest.h; sourceTree = "<group>"; };
+		EAFFF91418EF3F6300510640 /* YOSUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSUserRequest.m; sourceTree = "<group>"; };
+		EAFFF91518EF3F6300510640 /* YQLQueryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQLQueryRequest.h; sourceTree = "<group>"; };
+		EAFFF91618EF3F6300510640 /* YQLQueryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQLQueryRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +345,7 @@
 		EA5D58A71896FF39005A9C47 /* Library App */ = {
 			isa = PBXGroup;
 			children = (
+				EAFFF8BB18EF3D6D00510640 /* YahooSocialSdk.xcodeproj */,
 				EA87366618D79880002EF060 /* mailcore2.xcodeproj */,
 				EA63478118CA5A2300BEFDC3 /* Unused For now */,
 				EA29131718A2A3E600CC0CFD /* RSS Feed */,
@@ -275,20 +366,13 @@
 				EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */,
 				EA6C8AA718CA7755005EFBE7 /* TextbookC.h */,
 				EA6C8AA818CA7755005EFBE7 /* TextbookC.m */,
-				EAB81E8B18D37864001BBE11 /* CreateTextbookVC.h */,
-				EAB81E8C18D37864001BBE11 /* CreateTextbookVC.m */,
+				EA2AEE9A18E610D6002C95AE /* CreateTextbookVC.h */,
+				EA2AEE9B18E610D7002C95AE /* CreateTextbookVC.m */,
+				EA2AEE9D18E61354002C95AE /* viewTextbook.h */,
+				EA2AEE9E18E61354002C95AE /* viewTextbook.m */,
+				EAFFF92318EF46EA00510640 /* Yahoo API */,
+				EAFFF92418EF470900510640 /* Core Data */,
 				EA5D58B91896FF39005A9C47 /* Images.xcassets */,
-				EA67846518BBE41F00BAF544 /* Textbooks.xcdatamodeld */,
-				EA90142F18CA761700790BBE /* Textbook.h */,
-				EA90143018CA761700790BBE /* Textbook.m */,
-				EA90142C18CA761600790BBE /* Author_Textbook.h */,
-				EA90142D18CA761600790BBE /* Author_Textbook.m */,
-				EA90142918CA761600790BBE /* Courses.h */,
-				EA90142A18CA761600790BBE /* Courses.m */,
-				EA90142618CA761600790BBE /* Course_Textbook.h */,
-				EA90142718CA761600790BBE /* Course_Textbook.m */,
-				EA90142318CA761600790BBE /* Authors.h */,
-				EA90142418CA761600790BBE /* Authors.m */,
 				EA5D58A81896FF39005A9C47 /* Supporting Files */,
 			);
 			path = "Library App";
@@ -346,6 +430,125 @@
 				EA87367718D79880002EF060 /* MailCore.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EAFFF8BC18EF3D6D00510640 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAFFF8C418EF3D6D00510640 /* YahooSocialSdk.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAFFF8D018EF3F0F00510640 /* json-framework */ = {
+			isa = PBXGroup;
+			children = (
+				EAFFF8D118EF3F0F00510640 /* JSON.h */,
+				EAFFF8D218EF3F0F00510640 /* NSObject+SBJSON.h */,
+				EAFFF8D318EF3F0F00510640 /* NSObject+SBJSON.m */,
+				EAFFF8D418EF3F0F00510640 /* NSString+SBJSON.h */,
+				EAFFF8D518EF3F0F00510640 /* NSString+SBJSON.m */,
+				EAFFF8D618EF3F0F00510640 /* SBJSON.h */,
+				EAFFF8D718EF3F0F00510640 /* SBJSON.m */,
+			);
+			path = "json-framework";
+			sourceTree = "<group>";
+		};
+		EAFFF8DB18EF3F4900510640 /* YOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				EAFFF8DC18EF3F4900510640 /* Crypto */,
+				EAFFF8DF18EF3F4900510640 /* NSData+OAuthResponse.h */,
+				EAFFF8E018EF3F4900510640 /* NSData+OAuthResponse.m */,
+				EAFFF8E118EF3F4900510640 /* NSDictionary+QueryString.h */,
+				EAFFF8E218EF3F4900510640 /* NSDictionary+QueryString.m */,
+				EAFFF8E318EF3F4900510640 /* NSString+URLEncoding.h */,
+				EAFFF8E418EF3F4900510640 /* NSString+URLEncoding.m */,
+				EAFFF8E518EF3F4900510640 /* YOAuth.h */,
+				EAFFF8E618EF3F4900510640 /* YOAuthConsumer.h */,
+				EAFFF8E718EF3F4900510640 /* YOAuthConsumer.m */,
+				EAFFF8E818EF3F4900510640 /* YOAuthRequest.h */,
+				EAFFF8E918EF3F4900510640 /* YOAuthRequest.m */,
+				EAFFF8EA18EF3F4900510640 /* YOAuthSignatureMethod.h */,
+				EAFFF8EB18EF3F4900510640 /* YOAuthSignatureMethod_HMAC-SHA1.h */,
+				EAFFF8EC18EF3F4900510640 /* YOAuthSignatureMethod_HMAC-SHA1.m */,
+				EAFFF8ED18EF3F4900510640 /* YOAuthSignatureMethod_PLAINTEXT.h */,
+				EAFFF8EE18EF3F4900510640 /* YOAuthSignatureMethod_PLAINTEXT.m */,
+				EAFFF8EF18EF3F4900510640 /* YOAuthToken.h */,
+				EAFFF8F018EF3F4900510640 /* YOAuthToken.m */,
+				EAFFF8F118EF3F4900510640 /* YOAuthUtil.h */,
+				EAFFF8F218EF3F4900510640 /* YOAuthUtil.m */,
+			);
+			path = YOAuth;
+			sourceTree = "<group>";
+		};
+		EAFFF8DC18EF3F4900510640 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				EAFFF8DD18EF3F4900510640 /* Base64Transcoder.c */,
+				EAFFF8DE18EF3F4900510640 /* Base64Transcoder.h */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		EAFFF8FD18EF3F6300510640 /* YOSSocial */ = {
+			isa = PBXGroup;
+			children = (
+				EAFFF8FE18EF3F6300510640 /* YOSAccessToken.h */,
+				EAFFF8FF18EF3F6300510640 /* YOSAccessToken.m */,
+				EAFFF90018EF3F6300510640 /* YOSAuthRequest.h */,
+				EAFFF90118EF3F6300510640 /* YOSAuthRequest.m */,
+				EAFFF90218EF3F6300510640 /* YOSBaseRequest.h */,
+				EAFFF90318EF3F6300510640 /* YOSBaseRequest.m */,
+				EAFFF90418EF3F6300510640 /* YOSOpenSocialRequest.h */,
+				EAFFF90518EF3F6300510640 /* YOSOpenSocialRequest.m */,
+				EAFFF90618EF3F6300510640 /* YOSRequestClient.h */,
+				EAFFF90718EF3F6300510640 /* YOSRequestClient.m */,
+				EAFFF90818EF3F6300510640 /* YOSRequestToken.h */,
+				EAFFF90918EF3F6300510640 /* YOSRequestToken.m */,
+				EAFFF90A18EF3F6300510640 /* YOSResponseData.h */,
+				EAFFF90B18EF3F6300510640 /* YOSResponseData.m */,
+				EAFFF90C18EF3F6300510640 /* YOSSession.h */,
+				EAFFF90D18EF3F6300510640 /* YOSSession.m */,
+				EAFFF90E18EF3F6300510640 /* YOSSocial.h */,
+				EAFFF90F18EF3F6300510640 /* YOSTokenStore.h */,
+				EAFFF91018EF3F6300510640 /* YOSTokenStore.m */,
+				EAFFF91118EF3F6300510640 /* YOSUser.h */,
+				EAFFF91218EF3F6300510640 /* YOSUser.m */,
+				EAFFF91318EF3F6300510640 /* YOSUserRequest.h */,
+				EAFFF91418EF3F6300510640 /* YOSUserRequest.m */,
+				EAFFF91518EF3F6300510640 /* YQLQueryRequest.h */,
+				EAFFF91618EF3F6300510640 /* YQLQueryRequest.m */,
+			);
+			path = YOSSocial;
+			sourceTree = "<group>";
+		};
+		EAFFF92318EF46EA00510640 /* Yahoo API */ = {
+			isa = PBXGroup;
+			children = (
+				EAFFF8DB18EF3F4900510640 /* YOAuth */,
+				EAFFF8D018EF3F0F00510640 /* json-framework */,
+				EAFFF8FD18EF3F6300510640 /* YOSSocial */,
+			);
+			name = "Yahoo API";
+			sourceTree = "<group>";
+		};
+		EAFFF92418EF470900510640 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				EA67846518BBE41F00BAF544 /* Textbooks.xcdatamodeld */,
+				EA90142F18CA761700790BBE /* Textbook.h */,
+				EA90143018CA761700790BBE /* Textbook.m */,
+				EA90142C18CA761600790BBE /* Author_Textbook.h */,
+				EA90142D18CA761600790BBE /* Author_Textbook.m */,
+				EA90142918CA761600790BBE /* Courses.h */,
+				EA90142A18CA761600790BBE /* Courses.m */,
+				EA90142618CA761600790BBE /* Course_Textbook.h */,
+				EA90142718CA761600790BBE /* Course_Textbook.m */,
+				EA90142318CA761600790BBE /* Authors.h */,
+				EA90142418CA761600790BBE /* Authors.m */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +623,10 @@
 					ProductGroup = EA87366718D79880002EF060 /* Products */;
 					ProjectRef = EA87366618D79880002EF060 /* mailcore2.xcodeproj */;
 				},
+				{
+					ProductGroup = EAFFF8BC18EF3D6D00510640 /* Products */;
+					ProjectRef = EAFFF8BB18EF3D6D00510640 /* YahooSocialSdk.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -465,6 +672,13 @@
 			remoteRef = EA87367618D79880002EF060 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		EAFFF8C418EF3D6D00510640 /* YahooSocialSdk.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YahooSocialSdk.framework;
+			remoteRef = EAFFF8C318EF3D6D00510640 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -493,30 +707,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAFFF8F618EF3F4900510640 /* NSString+URLEncoding.m in Sources */,
+				EAFFF91718EF3F6300510640 /* YOSAccessToken.m in Sources */,
+				EAFFF91D18EF3F6300510640 /* YOSResponseData.m in Sources */,
 				EA90142818CA761600790BBE /* Course_Textbook.m in Sources */,
 				EA35E63018A2B4FE0087CE4F /* DetailedRSSVC.m in Sources */,
 				EA3A4978189C294C00EFD00E /* GoogleCal.m in Sources */,
+				EAFFF8F418EF3F4900510640 /* NSData+OAuthResponse.m in Sources */,
+				EAFFF91818EF3F6300510640 /* YOSAuthRequest.m in Sources */,
+				EAFFF92218EF3F6300510640 /* YQLQueryRequest.m in Sources */,
+				EAFFF91A18EF3F6300510640 /* YOSOpenSocialRequest.m in Sources */,
+				EAFFF91B18EF3F6300510640 /* YOSRequestClient.m in Sources */,
+				EAFFF8F518EF3F4900510640 /* NSDictionary+QueryString.m in Sources */,
+				EAFFF91E18EF3F6300510640 /* YOSSession.m in Sources */,
+				EAFFF8FA18EF3F4900510640 /* YOAuthSignatureMethod_PLAINTEXT.m in Sources */,
 				EA7FAD4818A2AB3D007612DA /* NSString+HTML.m in Sources */,
-				EAB81E8D18D37864001BBE11 /* CreateTextbookVC.m in Sources */,
+				EA2AEE9C18E610D7002C95AE /* CreateTextbookVC.m in Sources */,
 				EA7FAD4518A2AB3D007612DA /* MWFeedParser.m in Sources */,
 				EA2BEA6D18B80C1200970E8E /* MainMenuVC.m in Sources */,
 				EA90142518CA761600790BBE /* Authors.m in Sources */,
+				EAFFF8F718EF3F4900510640 /* YOAuthConsumer.m in Sources */,
+				EAFFF92018EF3F6300510640 /* YOSUser.m in Sources */,
 				EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */,
 				EA7FAD4718A2AB3D007612DA /* MWFeedItem.m in Sources */,
+				EAFFF8FB18EF3F4900510640 /* YOAuthToken.m in Sources */,
 				EA6C8AA918CA7755005EFBE7 /* TextbookC.m in Sources */,
 				EA7FAD4A18A2AB3D007612DA /* GTMNSString+HTML.m in Sources */,
 				EA90142E18CA761600790BBE /* Author_Textbook.m in Sources */,
+				EAFFF8F318EF3F4900510640 /* Base64Transcoder.c in Sources */,
+				EAFFF8DA18EF3F0F00510640 /* SBJSON.m in Sources */,
+				EAFFF92118EF3F6300510640 /* YOSUserRequest.m in Sources */,
 				EA7FAD4618A2AB3D007612DA /* MWFeedInfo.m in Sources */,
 				EA35FAD918A05B59008A36E3 /* RSSVC.m in Sources */,
 				EA098CBF18C11FD200A41031 /* TextbooksClassVC.m in Sources */,
+				EAFFF8F818EF3F4900510640 /* YOAuthRequest.m in Sources */,
+				EA2AEE9F18E61354002C95AE /* viewTextbook.m in Sources */,
 				EA90143118CA761700790BBE /* Textbook.m in Sources */,
+				EAFFF8F918EF3F4900510640 /* YOAuthSignatureMethod_HMAC-SHA1.m in Sources */,
 				EA90142B18CA761600790BBE /* Courses.m in Sources */,
+				EAFFF91F18EF3F6300510640 /* YOSTokenStore.m in Sources */,
 				EA5E3F9918C135B5000064D6 /* TextbookTBVC.m in Sources */,
 				EA67846718BBE41F00BAF544 /* Textbooks.xcdatamodeld in Sources */,
 				EA7FAD4918A2AB3D007612DA /* NSDate+InternetDateTime.m in Sources */,
+				EAFFF8D818EF3F0F00510640 /* NSObject+SBJSON.m in Sources */,
 				EA5D58B21896FF39005A9C47 /* AppDelegate.m in Sources */,
 				EA5D58D8189700AD005A9C47 /* HoursVC.m in Sources */,
+				EAFFF8FC18EF3F4900510640 /* YOAuthUtil.m in Sources */,
 				EA098CB518C1093200A41031 /* TextbookVC.m in Sources */,
+				EAFFF8D918EF3F0F00510640 /* NSString+SBJSON.m in Sources */,
+				EAFFF91C18EF3F6300510640 /* YOSRequestToken.m in Sources */,
+				EAFFF91918EF3F6300510640 /* YOSBaseRequest.m in Sources */,
 				EA5D58AE1896FF39005A9C47 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -650,6 +890,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library App/Library App-Prefix.pch";
@@ -681,6 +922,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library App/Library App-Prefix.pch";
