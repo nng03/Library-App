@@ -15,6 +15,11 @@
 		EA35E63018A2B4FE0087CE4F /* DetailedRSSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */; };
 		EA35FAD918A05B59008A36E3 /* RSSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA35FAD818A05B59008A36E3 /* RSSVC.m */; };
 		EA3A4978189C294C00EFD00E /* GoogleCal.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3A4977189C294C00EFD00E /* GoogleCal.m */; };
+		EA55056B18F8663C009D4DAF /* Authors.m in Sources */ = {isa = PBXBuildFile; fileRef = EA55056A18F8663C009D4DAF /* Authors.m */; };
+		EA55056E18F8663C009D4DAF /* Course_Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA55056D18F8663C009D4DAF /* Course_Textbook.m */; };
+		EA55057118F8663C009D4DAF /* Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA55057018F8663C009D4DAF /* Textbook.m */; };
+		EA55057418F8663C009D4DAF /* Author_Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA55057318F8663C009D4DAF /* Author_Textbook.m */; };
+		EA55057718F8663C009D4DAF /* Courses.m in Sources */ = {isa = PBXBuildFile; fileRef = EA55057618F8663C009D4DAF /* Courses.m */; };
 		EA5D58A21896FF39005A9C47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D58A11896FF39005A9C47 /* Foundation.framework */; };
 		EA5D58A41896FF39005A9C47 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D58A31896FF39005A9C47 /* CoreGraphics.framework */; };
 		EA5D58A61896FF39005A9C47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5D58A51896FF39005A9C47 /* UIKit.framework */; };
@@ -40,11 +45,6 @@
 		EA7FAD4918A2AB3D007612DA /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD4218A2AB3D007612DA /* NSDate+InternetDateTime.m */; };
 		EA7FAD4A18A2AB3D007612DA /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD4418A2AB3D007612DA /* GTMNSString+HTML.m */; };
 		EA87367A18D7996E002EF060 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA87367118D79880002EF060 /* libMailCore-ios.a */; };
-		EA90142518CA761600790BBE /* Authors.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90142418CA761600790BBE /* Authors.m */; };
-		EA90142818CA761600790BBE /* Course_Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90142718CA761600790BBE /* Course_Textbook.m */; };
-		EA90142B18CA761600790BBE /* Courses.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90142A18CA761600790BBE /* Courses.m */; };
-		EA90142E18CA761600790BBE /* Author_Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90142D18CA761600790BBE /* Author_Textbook.m */; };
-		EA90143118CA761700790BBE /* Textbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA90143018CA761700790BBE /* Textbook.m */; };
 		EAB420F518A57979000A1831 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F418A57979000A1831 /* CFNetwork.framework */; };
 		EAB420F718A57981000A1831 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F618A57981000A1831 /* Security.framework */; };
 		EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */; };
@@ -151,6 +151,16 @@
 		EA35FAD818A05B59008A36E3 /* RSSVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSVC.m; sourceTree = "<group>"; };
 		EA3A4976189C294C00EFD00E /* GoogleCal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleCal.h; sourceTree = "<group>"; };
 		EA3A4977189C294C00EFD00E /* GoogleCal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleCal.m; sourceTree = "<group>"; };
+		EA55056918F8663C009D4DAF /* Authors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authors.h; sourceTree = "<group>"; };
+		EA55056A18F8663C009D4DAF /* Authors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authors.m; sourceTree = "<group>"; };
+		EA55056C18F8663C009D4DAF /* Course_Textbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course_Textbook.h; sourceTree = "<group>"; };
+		EA55056D18F8663C009D4DAF /* Course_Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course_Textbook.m; sourceTree = "<group>"; };
+		EA55056F18F8663C009D4DAF /* Textbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Textbook.h; sourceTree = "<group>"; };
+		EA55057018F8663C009D4DAF /* Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Textbook.m; sourceTree = "<group>"; };
+		EA55057218F8663C009D4DAF /* Author_Textbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author_Textbook.h; sourceTree = "<group>"; };
+		EA55057318F8663C009D4DAF /* Author_Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author_Textbook.m; sourceTree = "<group>"; };
+		EA55057518F8663C009D4DAF /* Courses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Courses.h; sourceTree = "<group>"; };
+		EA55057618F8663C009D4DAF /* Courses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Courses.m; sourceTree = "<group>"; };
 		EA5D589E1896FF39005A9C47 /* Library App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Library App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5D58A11896FF39005A9C47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA5D58A31896FF39005A9C47 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,16 +200,6 @@
 		EA7FAD4318A2AB3D007612DA /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		EA7FAD4418A2AB3D007612DA /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		EA87366618D79880002EF060 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../../mailcore2-master/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
-		EA90142318CA761600790BBE /* Authors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authors.h; sourceTree = "<group>"; };
-		EA90142418CA761600790BBE /* Authors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Authors.m; sourceTree = "<group>"; };
-		EA90142618CA761600790BBE /* Course_Textbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course_Textbook.h; sourceTree = "<group>"; };
-		EA90142718CA761600790BBE /* Course_Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course_Textbook.m; sourceTree = "<group>"; };
-		EA90142918CA761600790BBE /* Courses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Courses.h; sourceTree = "<group>"; };
-		EA90142A18CA761600790BBE /* Courses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Courses.m; sourceTree = "<group>"; };
-		EA90142C18CA761600790BBE /* Author_Textbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author_Textbook.h; sourceTree = "<group>"; };
-		EA90142D18CA761600790BBE /* Author_Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author_Textbook.m; sourceTree = "<group>"; };
-		EA90142F18CA761700790BBE /* Textbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Textbook.h; sourceTree = "<group>"; };
-		EA90143018CA761700790BBE /* Textbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Textbook.m; sourceTree = "<group>"; };
 		EAB420F418A57979000A1831 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EAB420F618A57981000A1831 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
@@ -537,16 +537,16 @@
 			isa = PBXGroup;
 			children = (
 				EA67846518BBE41F00BAF544 /* Textbooks.xcdatamodeld */,
-				EA90142F18CA761700790BBE /* Textbook.h */,
-				EA90143018CA761700790BBE /* Textbook.m */,
-				EA90142C18CA761600790BBE /* Author_Textbook.h */,
-				EA90142D18CA761600790BBE /* Author_Textbook.m */,
-				EA90142918CA761600790BBE /* Courses.h */,
-				EA90142A18CA761600790BBE /* Courses.m */,
-				EA90142618CA761600790BBE /* Course_Textbook.h */,
-				EA90142718CA761600790BBE /* Course_Textbook.m */,
-				EA90142318CA761600790BBE /* Authors.h */,
-				EA90142418CA761600790BBE /* Authors.m */,
+				EA55057518F8663C009D4DAF /* Courses.h */,
+				EA55057618F8663C009D4DAF /* Courses.m */,
+				EA55057218F8663C009D4DAF /* Author_Textbook.h */,
+				EA55057318F8663C009D4DAF /* Author_Textbook.m */,
+				EA55056F18F8663C009D4DAF /* Textbook.h */,
+				EA55057018F8663C009D4DAF /* Textbook.m */,
+				EA55056C18F8663C009D4DAF /* Course_Textbook.h */,
+				EA55056D18F8663C009D4DAF /* Course_Textbook.m */,
+				EA55056918F8663C009D4DAF /* Authors.h */,
+				EA55056A18F8663C009D4DAF /* Authors.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -710,7 +710,6 @@
 				EAFFF8F618EF3F4900510640 /* NSString+URLEncoding.m in Sources */,
 				EAFFF91718EF3F6300510640 /* YOSAccessToken.m in Sources */,
 				EAFFF91D18EF3F6300510640 /* YOSResponseData.m in Sources */,
-				EA90142818CA761600790BBE /* Course_Textbook.m in Sources */,
 				EA35E63018A2B4FE0087CE4F /* DetailedRSSVC.m in Sources */,
 				EA3A4978189C294C00EFD00E /* GoogleCal.m in Sources */,
 				EAFFF8F418EF3F4900510640 /* NSData+OAuthResponse.m in Sources */,
@@ -725,15 +724,14 @@
 				EA2AEE9C18E610D7002C95AE /* CreateTextbookVC.m in Sources */,
 				EA7FAD4518A2AB3D007612DA /* MWFeedParser.m in Sources */,
 				EA2BEA6D18B80C1200970E8E /* MainMenuVC.m in Sources */,
-				EA90142518CA761600790BBE /* Authors.m in Sources */,
 				EAFFF8F718EF3F4900510640 /* YOAuthConsumer.m in Sources */,
 				EAFFF92018EF3F6300510640 /* YOSUser.m in Sources */,
 				EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */,
+				EA55057418F8663C009D4DAF /* Author_Textbook.m in Sources */,
 				EA7FAD4718A2AB3D007612DA /* MWFeedItem.m in Sources */,
 				EAFFF8FB18EF3F4900510640 /* YOAuthToken.m in Sources */,
 				EA6C8AA918CA7755005EFBE7 /* TextbookC.m in Sources */,
 				EA7FAD4A18A2AB3D007612DA /* GTMNSString+HTML.m in Sources */,
-				EA90142E18CA761600790BBE /* Author_Textbook.m in Sources */,
 				EAFFF8F318EF3F4900510640 /* Base64Transcoder.c in Sources */,
 				EAFFF8DA18EF3F0F00510640 /* SBJSON.m in Sources */,
 				EAFFF92118EF3F6300510640 /* YOSUserRequest.m in Sources */,
@@ -742,9 +740,7 @@
 				EA098CBF18C11FD200A41031 /* TextbooksClassVC.m in Sources */,
 				EAFFF8F818EF3F4900510640 /* YOAuthRequest.m in Sources */,
 				EA2AEE9F18E61354002C95AE /* viewTextbook.m in Sources */,
-				EA90143118CA761700790BBE /* Textbook.m in Sources */,
 				EAFFF8F918EF3F4900510640 /* YOAuthSignatureMethod_HMAC-SHA1.m in Sources */,
-				EA90142B18CA761600790BBE /* Courses.m in Sources */,
 				EAFFF91F18EF3F6300510640 /* YOSTokenStore.m in Sources */,
 				EA5E3F9918C135B5000064D6 /* TextbookTBVC.m in Sources */,
 				EA67846718BBE41F00BAF544 /* Textbooks.xcdatamodeld in Sources */,
@@ -752,9 +748,13 @@
 				EAFFF8D818EF3F0F00510640 /* NSObject+SBJSON.m in Sources */,
 				EA5D58B21896FF39005A9C47 /* AppDelegate.m in Sources */,
 				EA5D58D8189700AD005A9C47 /* HoursVC.m in Sources */,
+				EA55057118F8663C009D4DAF /* Textbook.m in Sources */,
+				EA55056B18F8663C009D4DAF /* Authors.m in Sources */,
+				EA55057718F8663C009D4DAF /* Courses.m in Sources */,
 				EAFFF8FC18EF3F4900510640 /* YOAuthUtil.m in Sources */,
 				EA098CB518C1093200A41031 /* TextbookVC.m in Sources */,
 				EAFFF8D918EF3F0F00510640 /* NSString+SBJSON.m in Sources */,
+				EA55056E18F8663C009D4DAF /* Course_Textbook.m in Sources */,
 				EAFFF91C18EF3F6300510640 /* YOSRequestToken.m in Sources */,
 				EAFFF91918EF3F6300510640 /* YOSBaseRequest.m in Sources */,
 				EA5D58AE1896FF39005A9C47 /* main.m in Sources */,

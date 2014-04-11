@@ -2,7 +2,7 @@
 //  Textbook.h
 //  Library App
 //
-//  Created by fp on 3/7/14.
+//  Created by fp on 4/11/14.
 //  Copyright (c) 2014 Nick. All rights reserved.
 //
 
@@ -15,9 +15,9 @@
 
 @property (nonatomic, retain) NSString * cover_image;
 @property (nonatomic, retain) NSNumber * idd;
-@property (nonatomic, retain) NSNumber * isbn;
+@property (nonatomic, retain) NSString * isbn;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) Course_Textbook *course;
 @property (nonatomic, retain) Author_Textbook *author;
+@property (nonatomic, retain) Course_Textbook *course;
 
 @end

@@ -58,9 +58,7 @@
         Course_Textbook *course_book = [NSEntityDescription insertNewObjectForEntityForName:@"Course_Textbook"
                                                                      inManagedObjectContext:self.managedObjectContext];
         text.title = self.textbookNameTextField.text;
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        text.isbn = [f numberFromString:self.isbnNumberTextField.text];
+        text.isbn = self.isbnNumberTextField.text;
         text.course = course_book;
         text.author = author_book;
         text.idd = [[NSNumber alloc] initWithInt:1];

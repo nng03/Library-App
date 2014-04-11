@@ -2,7 +2,7 @@
 //  Textbook.m
 //  Library App
 //
-//  Created by fp on 3/7/14.
+//  Created by fp on 4/11/14.
 //  Copyright (c) 2014 Nick. All rights reserved.
 //
 
@@ -17,7 +17,7 @@
 @dynamic idd;
 @dynamic isbn;
 @dynamic title;
-@dynamic course;
 @dynamic author;
+@dynamic course;
 
 @end

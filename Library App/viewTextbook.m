@@ -26,6 +26,11 @@
 {
     [super viewDidLoad];
     self.title = self.text.title;
+    [self.view addSubview:self.coverPage];
+    self.authorLabel.text = self.text.author.author.name;
+    [self.authorLabel sizeToFit];
+    self.descriptionTextView.delegate = self;
+    self.descriptionTextView.editable = NO;
     [self loadTextbookImage];
 }
 
@@ -39,7 +44,6 @@
 
 - (void)fetchedData:(NSData *)fetchedData
 {
-    NSError *error;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:fetchedData options:kNilOptions error:nil];
     NSDictionary *dict2 = [dict valueForKeyPath:@"query"];
     NSDictionary *dict3 = [dict2 valueForKeyPath:@"results"];
@@ -47,7 +51,13 @@
     NSDictionary *dict5 = [dict4 valueForKeyPath:@"items"];
     NSDictionary *dict6 = [dict5 valueForKeyPath:@"volumeInfo"];
     NSDictionary *dict7 = [dict6 valueForKeyPath:@"imageLinks"];
-    
+    NSString *imageURLString = [dict7 objectForKey:@"thumbnail"];
+    NSURL *imageURL = [NSURL URLWithString:imageURLString];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    self.coverPage.image = [UIImage imageWithData:imageData];
+    NSDictionary *dictForDescription = [dict5 valueForKeyPath:@"searchInfo"];
+    NSString *description = [dictForDescription objectForKey:@"textSnippet"];
+    self.descriptionTextView.text = description;
 }
 
 - (NSString *)queryURLForTextbook
@@ -55,7 +65,7 @@
     NSString *queryPart1 = @"http://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20google.books%20WHERE%20q%3D%22";
     NSString *queryPart2 = @"%22%20AND%20maxResults%3D1&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=";
     NSString *result = queryPart1;
-    NSString *isbn = [self.text.isbn stringValue];
+    NSString *isbn = self.text.isbn;
     result = [result stringByAppendingString:isbn];
     result = [result stringByAppendingString:queryPart2];
     return result;

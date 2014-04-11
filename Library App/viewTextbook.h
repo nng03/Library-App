@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Textbook.h"
-
-@interface viewTextbook : UIViewController
+@interface viewTextbook : UIViewController <UITextViewDelegate>
 
 #define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
 
+@property (weak, nonatomic) IBOutlet UIImageView *coverPage;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (strong, nonatomic) Textbook *text;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
