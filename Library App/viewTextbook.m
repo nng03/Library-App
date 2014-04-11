@@ -29,6 +29,12 @@
     [self.view addSubview:self.coverPage];
     self.authorLabel.text = self.text.author.author.name;
     [self.authorLabel sizeToFit];
+    NSString *courseName = @"Course: ";
+    self.courseNameLabel.text = [courseName stringByAppendingString:self.text.course.course.course_name];
+    [self.courseNameLabel sizeToFit];
+    NSString *courseCode = @"Course Code: ";
+    self.courseCodeLabel.text = [courseCode stringByAppendingString:self.text.course.course.course_code];
+    [self.courseCodeLabel sizeToFit];
     self.descriptionTextView.delegate = self;
     self.descriptionTextView.editable = NO;
     [self loadTextbookImage];
@@ -55,9 +61,14 @@
     NSURL *imageURL = [NSURL URLWithString:imageURLString];
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     self.coverPage.image = [UIImage imageWithData:imageData];
+    self.text.cover_image = imageURLString;
     NSDictionary *dictForDescription = [dict5 valueForKeyPath:@"searchInfo"];
     NSString *description = [dictForDescription objectForKey:@"textSnippet"];
     self.descriptionTextView.text = description;
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
 }
 
 - (NSString *)queryURLForTextbook

@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *coverPage;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UILabel *courseCodeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *courseNameLabel;
 @property (strong, nonatomic) Textbook *text;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
