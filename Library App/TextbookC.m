@@ -59,21 +59,28 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [self.differentClasses count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    
-    return [self.textbooks count];
+    NSMutableArray *array = [self.booksForClasses objectAtIndex:section];
+    return [array count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    Courses *course = [self.differentClasses objectAtIndex:section];
+    return course.course_name;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Textbook *text = [self.textbooks objectAtIndex:indexPath.row];
+    static NSString *cellIdentifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    NSMutableArray *array = [self.booksForClasses objectAtIndex:indexPath.section];
+    Textbook *text = [array objectAtIndex:indexPath.row];
     cell.textLabel.text = text.title;
     return cell;
 }
@@ -86,6 +93,8 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     editingStyle = UITableViewCellEditingStyleDelete;
+    NSMutableArray *array = [self.booksForClasses objectAtIndex:indexPath.section];
+    Textbook *temp = [array objectAtIndex:indexPath.row];
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         NSString *entityDescription = @"Textbook";
@@ -112,14 +121,21 @@
             }
         }
     }
-    [self.textbooks removeObjectAtIndex:indexPath.row];
+    [self.textbooks removeObject:temp];
+    [array removeObject:temp];
+    if ([array count] == 0)
+    {
+        [self.differentClasses removeObjectAtIndex:indexPath.section];
+        [self.booksForClasses removeObjectAtIndex:indexPath.section];
+    }
     [self.tableView reloadData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    self.currentBook = [self.textbooks objectAtIndex:indexPath.row];
+    NSMutableArray *array = [self.booksForClasses objectAtIndex:indexPath.section];
+    self.currentBook = [array objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"viewbook" sender:cell];
 }
 
@@ -153,12 +169,20 @@
 {
     [self.textbooks addObject:text];
     Courses *course = text.course.course;
-    if (![self.differentClasses containsObject:course])
+    bool shouldAdd = true;
+    for (Courses *thing in self.differentClasses)
+    {
+        if ([thing.course_name isEqualToString:course.course_name])
+        {
+            shouldAdd = false;
+        }
+    }
+    if (shouldAdd)
     {
         [self.differentClasses addObject:course];
     }
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.textbooks count] - 1) inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    self.booksForClasses = [self fillBooksForClasses];
+    [self.tableView reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -179,7 +203,7 @@
 
 - (NSMutableArray *)fillBooksForClasses
 {
-    NSMutableArray *result = [NSMutableArray array];
+    NSMutableArray *result = [[NSMutableArray alloc] init];
     for (Courses *thing in self.differentClasses)
     {
         NSMutableArray *temp = [NSMutableArray array];
@@ -190,6 +214,7 @@
                 [temp addObject:text];
             }
         }
+        [result addObject:temp];
     }
     return result;
 }
