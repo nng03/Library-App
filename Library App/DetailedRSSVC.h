@@ -16,7 +16,7 @@
 	NSString *dateString, *summaryString;
 }
 
-@property (nonatomic, strong) MWFeedItem *item;
-@property (nonatomic, strong) NSString *dateString, *summaryString;
+@property (strong, nonatomic) MWFeedItem *item;
+@property (strong, nonatomic) NSString *dateString, *summaryString;
 
 @end

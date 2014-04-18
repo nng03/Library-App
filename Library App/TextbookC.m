@@ -18,9 +18,10 @@
 
 @interface TextbookC ()
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSMutableArray *textbooks;
 @property (strong, nonatomic) NSMutableArray *differentClasses;
+@property (strong, nonatomic) NSMutableArray *booksForClasses;
 @property (strong, nonatomic) Textbook *currentBook;
 
 @end
@@ -43,6 +44,8 @@
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
     self.textbooks = [appDelegate getAllTextbooks];
+    self.differentClasses = [self removeDuplicatesFromArray:[appDelegate getAllCourses]];
+    self.booksForClasses = [self fillBooksForClasses];
 }
 
 - (void)didReceiveMemoryWarning
@@ -157,6 +160,38 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.textbooks count] - 1) inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (NSMutableArray *)removeDuplicatesFromArray:(NSMutableArray *)array
+{
+    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    NSMutableSet *set = [NSMutableSet set];
+    for (Courses *course in array)
+    {
+        if (![set containsObject:course.course_name])
+        {
+            [set addObject:course.course_name];
+            [temp addObject:course];
+        }
+    }
+    return temp;
+}
+
+- (NSMutableArray *)fillBooksForClasses
+{
+    NSMutableArray *result = [NSMutableArray array];
+    for (Courses *thing in self.differentClasses)
+    {
+        NSMutableArray *temp = [NSMutableArray array];
+        for (Textbook *text in self.textbooks)
+        {
+            if ([text.course.course.course_name isEqualToString:thing.course_name])
+            {
+                [temp addObject:text];
+            }
+        }
+    }
+    return result;
 }
 
 @end

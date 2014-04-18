@@ -102,6 +102,7 @@
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
+// Returns all textbooks currently stored by Core Data
 - (NSMutableArray *)getAllTextbooks
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -115,6 +116,7 @@
     return books;
 }
 
+// Returns all authors currently stored by Core Data
 - (NSMutableArray *)getAllAuthors
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -128,6 +130,7 @@
     return authors;
 }
 
+// Returns all courses currently stored by Core Data
 - (NSMutableArray *)getAllCourses
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];

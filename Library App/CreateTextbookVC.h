@@ -31,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *authorNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *courseNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *courseCodeTextField;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

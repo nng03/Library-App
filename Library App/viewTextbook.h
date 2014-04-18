@@ -18,6 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *courseCodeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *courseNameLabel;
 @property (strong, nonatomic) Textbook *text;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

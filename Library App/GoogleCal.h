@@ -16,8 +16,8 @@
     NSString *date;
 }
 
-@property (nonatomic, retain) NSString *timeRange;
-@property (nonatomic, retain) NSString *day;
-@property (nonatomic, retain) NSString *date;
+@property (strong, nonatomic) NSString *timeRange;
+@property (strong, nonatomic) NSString *day;
+@property (strong, nonatomic) NSString *date;
 
 @end
