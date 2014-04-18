@@ -105,7 +105,7 @@
         NSArray *items = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
         for (NSManagedObject *managedObject in items)
         {
-            Textbook *text = [self.textbooks objectAtIndex:indexPath.row];
+            Textbook *text = temp;
             if (managedObject == text)
             {
                 [_managedObjectContext deleteObject:text.course.course];
@@ -122,7 +122,7 @@
         }
     }
     [self.textbooks removeObject:temp];
-    [array removeObject:temp];
+    [array removeObjectAtIndex:indexPath.row];
     if ([array count] == 0)
     {
         [self.differentClasses removeObjectAtIndex:indexPath.section];
