@@ -123,8 +123,8 @@
             NSLog(@"Successfully sent email!");
         }
     }];
-    self.senderEmail.text = @"";
-    self.emailTextBody.text = @"";
+    self.senderEmail.text = @"Input your email here (optional)";
+    self.emailTextBody.text = @"Write your feedback here:";
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView

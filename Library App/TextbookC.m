@@ -20,6 +20,7 @@
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSMutableArray *textbooks;
+@property (strong, nonatomic) NSMutableArray *differentClasses;
 @property (strong, nonatomic) Textbook *currentBook;
 
 @end
@@ -61,6 +62,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    
     return [self.textbooks count];
 }
 
@@ -147,6 +149,11 @@
 - (void)createTextbookVC:(CreateTextbookVC *)controller didAddTextbook:(Textbook *)text
 {
     [self.textbooks addObject:text];
+    Courses *course = text.course.course;
+    if (![self.differentClasses containsObject:course])
+    {
+        [self.differentClasses addObject:course];
+    }
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:([self.textbooks count] - 1) inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self dismissViewControllerAnimated:YES completion:nil];
