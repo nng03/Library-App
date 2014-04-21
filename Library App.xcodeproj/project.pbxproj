@@ -44,6 +44,7 @@
 		EA7FAD4818A2AB3D007612DA /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD4018A2AB3D007612DA /* NSString+HTML.m */; };
 		EA7FAD4918A2AB3D007612DA /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD4218A2AB3D007612DA /* NSDate+InternetDateTime.m */; };
 		EA7FAD4A18A2AB3D007612DA /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD4418A2AB3D007612DA /* GTMNSString+HTML.m */; };
+		EA82973A1901D04A007839BF /* DatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8297391901D04A007839BF /* DatabaseVC.m */; };
 		EA87367A18D7996E002EF060 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA87367118D79880002EF060 /* libMailCore-ios.a */; };
 		EAB420F518A57979000A1831 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F418A57979000A1831 /* CFNetwork.framework */; };
 		EAB420F718A57981000A1831 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F618A57981000A1831 /* Security.framework */; };
@@ -199,6 +200,8 @@
 		EA7FAD4218A2AB3D007612DA /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
 		EA7FAD4318A2AB3D007612DA /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		EA7FAD4418A2AB3D007612DA /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		EA8297381901D04A007839BF /* DatabaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseVC.h; sourceTree = "<group>"; };
+		EA8297391901D04A007839BF /* DatabaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseVC.m; sourceTree = "<group>"; };
 		EA87366618D79880002EF060 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../../mailcore2-master/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
 		EAB420F418A57979000A1831 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EAB420F618A57981000A1831 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -361,6 +364,8 @@
 				EA35FAD718A05B59008A36E3 /* RSSVC.h */,
 				EA35FAD818A05B59008A36E3 /* RSSVC.m */,
 				EA35E62E18A2B4FE0087CE4F /* DetailedRSSVC.h */,
+				EA8297381901D04A007839BF /* DatabaseVC.h */,
+				EA8297391901D04A007839BF /* DatabaseVC.m */,
 				EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */,
 				EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */,
 				EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */,
@@ -744,6 +749,7 @@
 				EAFFF91F18EF3F6300510640 /* YOSTokenStore.m in Sources */,
 				EA5E3F9918C135B5000064D6 /* TextbookTBVC.m in Sources */,
 				EA67846718BBE41F00BAF544 /* Textbooks.xcdatamodeld in Sources */,
+				EA82973A1901D04A007839BF /* DatabaseVC.m in Sources */,
 				EA7FAD4918A2AB3D007612DA /* NSDate+InternetDateTime.m in Sources */,
 				EAFFF8D818EF3F0F00510640 /* NSObject+SBJSON.m in Sources */,
 				EA5D58B21896FF39005A9C47 /* AppDelegate.m in Sources */,
