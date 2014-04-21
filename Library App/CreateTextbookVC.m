@@ -204,6 +204,12 @@
             [alert show];
             self.isbnNumberTextField.text = @"";
         }
+        else if (self.isbnNumberTextField.text.length != 10)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid ISBN" message:@"Please type in a valid ISBN" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+            self.isbnNumberTextField.text = @"";
+        }
     }
 }
 

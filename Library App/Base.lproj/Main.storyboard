@@ -293,7 +293,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="ISBN Number" id="b4r-G3-OXg">
+                            <tableViewSection headerTitle="ISBN-10 Number" id="b4r-G3-OXg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JDZ-Ai-zUX">
                                         <rect key="frame" x="0.0" y="153" width="320" height="45"/>
