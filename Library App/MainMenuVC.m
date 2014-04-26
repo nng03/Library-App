@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *linkToNewsFeed;
 @property (weak, nonatomic) IBOutlet UIButton *linkToFeedback;
 @property (weak, nonatomic) IBOutlet UIButton *linkToTextbooks;
+@property (weak, nonatomic) IBOutlet UIButton *linkToFAQ;
 
 @end
 
@@ -65,5 +66,9 @@
     [self performSegueWithIdentifier:@"textbooksegue" sender:sender];
 }
 
+- (IBAction)linkToFAQ:(id)sender
+{
+    [self performSegueWithIdentifier:@"showfaq" sender:sender];
+}
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bfL-aP-SZu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bfL-aP-SZu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -137,12 +137,24 @@
                                     <action selector="linkToTextbooks:" destination="pui-d5-LGK" eventType="touchUpInside" id="Lts-WC-Trs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGO-7T-Nwj">
+                                <rect key="frame" x="20" y="384" width="202" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Frequently Asked Questions">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="linkToFAQ:" destination="pui-d5-LGK" eventType="touchUpInside" id="M3R-Ko-U0a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="k3u-17-KEg"/>
                     <connections>
                         <outlet property="linkToCal" destination="TV4-6p-3Pf" id="rft-Gc-DoS"/>
+                        <outlet property="linkToFAQ" destination="vGO-7T-Nwj" id="v3A-mM-7Q2"/>
                         <outlet property="linkToFeedback" destination="bRa-r7-Xbk" id="h5Q-aH-Uek"/>
                         <outlet property="linkToNewsFeed" destination="qEF-gU-Wos" id="Dct-eA-7IG"/>
                         <outlet property="linkToTextbooks" destination="rLD-h7-84v" id="2lp-Ge-Ba3"/>
@@ -150,6 +162,7 @@
                         <segue destination="Uba-dP-Efb" kind="push" identifier="newsfeedsegue" id="bVR-eE-ZB3"/>
                         <segue destination="sd4-bG-23T" kind="push" identifier="feedbacksegue" id="Mxy-w5-Vqt"/>
                         <segue destination="qKB-8g-ssm" kind="push" identifier="textbooksegue" id="wpu-SK-dC9"/>
+                        <segue destination="0dq-Qh-rIn" kind="push" identifier="showfaq" id="xU1-75-IVA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiZ-2W-oqN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,7 +186,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPQ-Oe-GrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="747"/>
+            <point key="canvasLocation" x="1712" y="747"/>
         </scene>
         <!--FeedbackVC-->
         <scene sceneID="UOJ-uG-jbW">
@@ -224,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdI-MG-It4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2354" y="1565"/>
+            <point key="canvasLocation" x="4458" y="1565"/>
         </scene>
         <!--TextbookC-->
         <scene sceneID="LzN-aP-JVy">
@@ -401,7 +414,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K8M-x1-ccs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766" y="1655"/>
+            <point key="canvasLocation" x="5870" y="1655"/>
+        </scene>
+        <!--DatabaseVC-->
+        <scene sceneID="dWC-pJ-BpV">
+            <objects>
+                <tableViewController id="0dq-Qh-rIn" customClass="DatabaseVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oJL-lD-K21">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Xfx-Rb-tYH">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xfx-Rb-tYH" id="Tda-1t-vwD">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0dq-Qh-rIn" id="Gsm-cS-Hpw"/>
+                            <outlet property="delegate" destination="0dq-Qh-rIn" id="bp1-J7-02R"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="dm9-zh-QKh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EjQ-fu-wrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1127" y="1529"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Er-vl-F5o">
@@ -419,7 +461,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6V-2a-Kuu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="1593"/>
+            <point key="canvasLocation" x="3900" y="1593"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o9d-Cq-tnp">
@@ -473,7 +515,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGK-26-F1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3240" y="1655"/>
+            <point key="canvasLocation" x="5344" y="1655"/>
         </scene>
         <!--View Textbook-->
         <scene sceneID="pCc-4f-KOF">
@@ -559,10 +601,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wpu-SK-dC9"/>
-        <segue reference="fDO-et-Erg"/>
         <segue reference="Mxy-w5-Vqt"/>
+        <segue reference="fDO-et-Erg"/>
+        <segue reference="bVR-eE-ZB3"/>
+        <segue reference="wpu-SK-dC9"/>
         <segue reference="tMj-xN-1Uw"/>
-        <segue reference="G2i-9c-1mF"/>
     </inferredMetricsTieBreakers>
 </document>
