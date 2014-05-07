@@ -12,7 +12,6 @@
 @interface DatabaseVC ()
 
 @property (strong, nonatomic) NSMutableArray *indexLabels;
-@property (strong, nonatomic) NSMutableArray *links;
 @property (strong, nonatomic) NSMutableArray *databases;
 
 @end
@@ -33,17 +32,12 @@
     [super viewDidLoad];
     self.databases = [[NSMutableArray alloc] init];
     self.title = @"Frequently Asked Questions";
-    self.links = [[NSMutableArray alloc] init];
-    [self.links addObject:@"Do I have acces to NYU's Bobst Library?"];
-    [self.links addObject:@"How do I access online resources off campus?"];
-    [self.links addObject:@"Now do I log in to BobCat?"];
-    [self.links addObject:@"What if the book I want to borrow is not on the shelf?"];
-    self.indexLabels = [[NSMutableArray alloc] init];
-    self.indexLabels = [self getFirstLetters:self.links];
     [self loadDbResources];
-    for (DatabaseResource *temp in self.databases)
+    self.indexLabels = [[NSMutableArray alloc] init];
+    self.indexLabels = [self getFirstLetters:self.databases];
+    for (NSString *string in self.indexLabels)
     {
-        NSLog(@"%@", temp.URL);
+        NSLog(@"%@", string);
     }
 }
 
@@ -88,13 +82,28 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 4;
+    return [self.indexLabels count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    NSString *headerTitle = [self tableView:(self.tableView) titleForHeaderInSection:section];
+    int counter = 0;
+    for (DatabaseResource *dbr in self.databases)
+    {
+        if ([[dbr.title substringToIndex:1] isEqualToString:headerTitle])
+        {
+            ++counter;
+        }
+    }
+    if (counter == 0)
+    {
+        return 1;
+    } else
+    {
+        return counter;
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -106,24 +115,9 @@
 {
     static NSString *CellIdentifier = @"cell";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    switch (indexPath.section) {
-        case 0:
-            cell.textLabel.text = @"Do I have acces to NYU's Bobst Library?";
-            cell.detailTextLabel.text = @"287 Views | 67+ 66- | Last updated on March 14, 2014";
-            break;
-        case 1:
-            cell.textLabel.text = @"How do I access online resources off campus?";
-            cell.detailTextLabel.text = @"337 Views | 58+ 73- | Last updated on Nov. 20, 2013";
-            break;
-        case 2:
-            cell.textLabel.text = @"Now do I log in to BobCat?";
-            cell.detailTextLabel.text = @"269 Views | 61+ 80- | Last updated on March 14, 2014";
-            break;
-        case 3:
-            cell.textLabel.text = @"What if the book I want to borrow is not on the shelf?";
-            cell.detailTextLabel.text = @"270 Views | 52+ 70- | Last updated on Dec 17, 2012";
-            break;
-    }
+    DatabaseResource *dbr = [self.databases objectAtIndex:indexPath.row];
+    cell.textLabel.text = dbr.title;
+    
     return cell;
 }
 
@@ -141,8 +135,7 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    NSMutableArray *temp = [NSMutableArray array];
-    return temp;
+    return [self getFirstLetters:self.databases];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
@@ -160,15 +153,15 @@
 
 - (NSMutableArray *)getFirstLetters:(NSArray *)array
 {
-    NSMutableArray *returnValue = [NSMutableArray array];
     NSMutableSet *set = [NSMutableSet set];
-    for (NSString *string in array)
+    NSMutableArray *returnValue = [[NSMutableArray alloc] init];
+    for (DatabaseResource *temp in array)
     {
-        NSString *temp = [string substringToIndex:1];
-        if (![set containsObject:temp])
+        NSString *string = [temp.title substringToIndex:1];
+        if (![set containsObject:string])
         {
-            [set addObject:temp];
-            [returnValue addObject:temp];
+            [set addObject:string];
+            [returnValue addObject:string];
         }
     }
     [returnValue sortUsingSelector:@selector(caseInsensitiveCompare:)];
