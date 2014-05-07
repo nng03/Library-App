@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA098CB518C1093200A41031 /* TextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA098CB418C1093200A41031 /* TextbookVC.m */; };
 		EA098CBF18C11FD200A41031 /* TextbooksClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA098CBE18C11FD200A41031 /* TextbooksClassVC.m */; };
+		EA1018D51919404D003AF4A7 /* DatabaseResource.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1018D41919404D003AF4A7 /* DatabaseResource.m */; };
 		EA2AEE9C18E610D7002C95AE /* CreateTextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2AEE9B18E610D7002C95AE /* CreateTextbookVC.m */; };
 		EA2AEE9F18E61354002C95AE /* viewTextbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2AEE9E18E61354002C95AE /* viewTextbook.m */; };
 		EA2BEA6D18B80C1200970E8E /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BEA6C18B80C1200970E8E /* MainMenuVC.m */; };
@@ -140,6 +141,8 @@
 		EA098CB418C1093200A41031 /* TextbookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextbookVC.m; sourceTree = "<group>"; };
 		EA098CBD18C11FD200A41031 /* TextbooksClassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextbooksClassVC.h; sourceTree = "<group>"; };
 		EA098CBE18C11FD200A41031 /* TextbooksClassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextbooksClassVC.m; sourceTree = "<group>"; };
+		EA1018D31919404D003AF4A7 /* DatabaseResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseResource.h; sourceTree = "<group>"; };
+		EA1018D41919404D003AF4A7 /* DatabaseResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseResource.m; sourceTree = "<group>"; };
 		EA2AEE9A18E610D6002C95AE /* CreateTextbookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTextbookVC.h; sourceTree = "<group>"; };
 		EA2AEE9B18E610D7002C95AE /* CreateTextbookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTextbookVC.m; sourceTree = "<group>"; };
 		EA2AEE9D18E61354002C95AE /* viewTextbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viewTextbook.h; sourceTree = "<group>"; };
@@ -365,6 +368,8 @@
 				EA35FAD818A05B59008A36E3 /* RSSVC.m */,
 				EA35E62E18A2B4FE0087CE4F /* DetailedRSSVC.h */,
 				EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */,
+				EA1018D31919404D003AF4A7 /* DatabaseResource.h */,
+				EA1018D41919404D003AF4A7 /* DatabaseResource.m */,
 				EA8297381901D04A007839BF /* DatabaseVC.h */,
 				EA8297391901D04A007839BF /* DatabaseVC.m */,
 				EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */,
@@ -763,6 +768,7 @@
 				EA55056E18F8663C009D4DAF /* Course_Textbook.m in Sources */,
 				EAFFF91C18EF3F6300510640 /* YOSRequestToken.m in Sources */,
 				EAFFF91918EF3F6300510640 /* YOSBaseRequest.m in Sources */,
+				EA1018D51919404D003AF4A7 /* DatabaseResource.m in Sources */,
 				EA5D58AE1896FF39005A9C47 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

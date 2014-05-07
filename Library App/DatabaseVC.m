@@ -7,11 +7,13 @@
 //
 
 #import "DatabaseVC.h"
+#import "DatabaseResource.h"
 
 @interface DatabaseVC ()
 
 @property (strong, nonatomic) NSMutableArray *indexLabels;
 @property (strong, nonatomic) NSMutableArray *links;
+@property (strong, nonatomic) NSMutableArray *databases;
 
 @end
 
@@ -29,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.databases = [[NSMutableArray alloc] init];
     self.title = @"Frequently Asked Questions";
     self.links = [[NSMutableArray alloc] init];
     [self.links addObject:@"Do I have acces to NYU's Bobst Library?"];
@@ -37,6 +40,11 @@
     [self.links addObject:@"What if the book I want to borrow is not on the shelf?"];
     self.indexLabels = [[NSMutableArray alloc] init];
     self.indexLabels = [self getFirstLetters:self.links];
+    [self loadDbResources];
+    for (DatabaseResource *temp in self.databases)
+    {
+        NSLog(@"%@", temp.URL);
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +54,36 @@
 }
 
 #pragma mark - Table view data source
+
+- (void)loadDbResources
+{
+    dispatch_sync(kBgQueue, ^{
+        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://api.researcher.poly.edu/dbresources"]];
+        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
+    });
+}
+
+- (void)fetchedData:(NSData *)responseData
+{
+    NSError *error;
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:responseData
+                                                         options:kNilOptions
+                                                           error:&error];
+    
+    for (NSDictionary *temp in json)
+    {
+        DatabaseResource *dbr = [[DatabaseResource alloc] init];
+        dbr.URL = [temp objectForKey:@"url"];
+        dbr.title = [temp objectForKey:@"title"];
+        dbr.description = [temp objectForKey:@"description"];
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        dbr.hasApp = [[f numberFromString:[temp objectForKey:@"hasApp"]] boolValue];
+        dbr.hasFullText = [[f numberFromString:[temp objectForKey:@"hasFullText"]] boolValue];
+        dbr.loginOffCampus = [[f numberFromString:[temp objectForKey:@"loginOffCampus"]] boolValue];
+        [self.databases addObject:dbr];
+    }
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -91,30 +129,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.section)
+    for (int i = 0; i < [self.databases count]; ++i)
     {
-        case 0:
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://dibnerlibrary.ask.mycustomercloud.com/questions/36"]];
-            break;
-        case 1:
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://dibnerlibrary.ask.mycustomercloud.com/questions/57"]];
-            break;
-        case 2:
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://dibnerlibrary.ask.mycustomercloud.com/questions/39"]];
-            break;
-        case 3:
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://dibnerlibrary.ask.mycustomercloud.com/questions/61"]];
-            break;
+        if (indexPath.row == i)
+        {
+            DatabaseResource *temp = [self.databases objectAtIndex:i];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:temp.URL]];
+        }
     }
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
     NSMutableArray *temp = [NSMutableArray array];
-    [temp addObject:@"D"];
-    [temp addObject:@"H"];
-    [temp addObject:@"N"];
-    [temp addObject:@"W"];
     return temp;
 }
 

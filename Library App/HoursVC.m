@@ -73,7 +73,7 @@
     return cell;
 }
 
--(void)LoadCalendarData
+- (void)LoadCalendarData
 {
     dispatch_sync(kBgQueue, ^{
         NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"https://www.google.com/calendar/feeds/9var82lp3jhu0eeu5cqthc2bd8%40group.calendar.google.com/public/basic?alt=jsonc&orderby=starttime&max-results=7&singleevents=true&sortorder=ascending&futureevents=true"]];
