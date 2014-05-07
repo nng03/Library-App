@@ -1,22 +1,22 @@
 //
-//  DatabaseVC.m
+//  FAQVC.m
 //  Library App
 //
-//  Created by fp on 4/18/14.
+//  Created by fp on 5/7/14.
 //  Copyright (c) 2014 Nick. All rights reserved.
 //
 
-#import "DatabaseVC.h"
-#import "DatabaseResource.h"
+#import "FAQVC.h"
+#import "FAQ.h"
 
-@interface DatabaseVC ()
+@interface FAQVC ()
 
+@property (strong, nonatomic) NSMutableArray *faqs;
 @property (strong, nonatomic) NSMutableArray *indexLabels;
-@property (strong, nonatomic) NSMutableArray *databases;
 
 @end
 
-@implementation DatabaseVC
+@implementation FAQVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,11 +30,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.databases = [[NSMutableArray alloc] init];
-    self.title = @"Databases";
-    [self loadDbResources];
+    self.title = @"Frequently Asked Questions";
+    self.faqs = [[NSMutableArray alloc] init];
+    [self loadFaqs];
     self.indexLabels = [[NSMutableArray alloc] init];
-    self.indexLabels = [self getFirstLetters:self.databases];
+    self.indexLabels = [self getFirstLetters:self.faqs];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,10 +45,10 @@
 
 #pragma mark - Table view data source
 
-- (void)loadDbResources
+- (void)loadFaqs
 {
     dispatch_sync(kBgQueue, ^{
-        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://api.researcher.poly.edu/dbresources"]];
+        NSData* data = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://api.researcher.poly.edu/faqs"]];
         [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
     });
 }
@@ -57,21 +57,13 @@
 {
     NSError *error;
     NSArray *json = [NSJSONSerialization JSONObjectWithData:responseData
-                                                         options:kNilOptions
-                                                           error:&error];
-    
+                                                    options:kNilOptions
+                                                      error:&error];
     for (NSDictionary *temp in json)
     {
-        DatabaseResource *dbr = [[DatabaseResource alloc] init];
-        dbr.URL = [temp objectForKey:@"url"];
-        dbr.title = [temp objectForKey:@"title"];
-        dbr.description = [temp objectForKey:@"description"];
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        dbr.hasApp = [[f numberFromString:[temp objectForKey:@"hasApp"]] boolValue];
-        dbr.hasFullText = [[f numberFromString:[temp objectForKey:@"hasFullText"]] boolValue];
-        dbr.loginOffCampus = [[f numberFromString:[temp objectForKey:@"loginOffCampus"]] boolValue];
-        [self.databases addObject:dbr];
+        FAQ *faq = [[FAQ alloc] init];
+        faq.title = [temp objectForKey:@"title"];
+        [self.faqs addObject:faq];
     }
 }
 
@@ -86,9 +78,9 @@
     // Return the number of rows in the section.
     NSString *headerTitle = [self tableView:(self.tableView) titleForHeaderInSection:section];
     int counter = 0;
-    for (DatabaseResource *dbr in self.databases)
+    for (FAQ *faq in self.faqs)
     {
-        if ([[dbr.title substringToIndex:1] isEqualToString:headerTitle])
+        if ([[faq.title substringToIndex:1] isEqualToString:headerTitle])
         {
             ++counter;
         }
@@ -111,22 +103,10 @@
 {
     static NSString *CellIdentifier = @"cell";
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    DatabaseResource *dbr = [self.databases objectAtIndex:indexPath.row];
-    cell.textLabel.text = dbr.title;
+    FAQ *faq = [self.faqs objectAtIndex:indexPath.row];
+    cell.textLabel.text = faq.title;
     
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    for (int i = 0; i < [self.databases count]; ++i)
-    {
-        if (indexPath.row == i)
-        {
-            DatabaseResource *temp = [self.databases objectAtIndex:i];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:temp.URL]];
-        }
-    }
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -151,7 +131,7 @@
 {
     NSMutableSet *set = [NSMutableSet set];
     NSMutableArray *returnValue = [[NSMutableArray alloc] init];
-    for (DatabaseResource *temp in array)
+    for (FAQ *temp in array)
     {
         NSString *string = [temp.title substringToIndex:1];
         if (![set containsObject:string])

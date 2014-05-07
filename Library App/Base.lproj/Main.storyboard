@@ -31,7 +31,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bli-M7-f1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2379" y="18"/>
+            <point key="canvasLocation" x="2905" y="18"/>
         </scene>
         <!--RSSVC-->
         <scene sceneID="7mX-2A-vf2">
@@ -62,6 +62,35 @@
             </objects>
             <point key="canvasLocation" x="2354" y="754"/>
         </scene>
+        <!--FAQVC-->
+        <scene sceneID="cEu-BH-MgN">
+            <objects>
+                <tableViewController id="ErE-6v-ILr" customClass="FAQVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hh7-vU-54C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="YOH-c3-04G">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YOH-c3-04G" id="XJe-fI-Q7z">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ErE-6v-ILr" id="nDc-pp-yuS"/>
+                            <outlet property="delegate" destination="ErE-6v-ILr" id="YMw-YX-oOU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="UGx-VX-axe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TPO-FF-Gmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="-65"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="j2K-6Y-c0p">
             <objects>
@@ -79,7 +108,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7n-Te-8LP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="26"/>
+            <point key="canvasLocation" x="2315" y="26"/>
         </scene>
         <!--Main MenuVC-->
         <scene sceneID="79f-Oc-PVS">
@@ -138,14 +167,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGO-7T-Nwj">
-                                <rect key="frame" x="20" y="384" width="202" height="30"/>
+                                <rect key="frame" x="20" y="384" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Frequently Asked Questions">
+                                <state key="normal" title="Databases">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="linkToFAQ:" destination="pui-d5-LGK" eventType="touchUpInside" id="M3R-Ko-U0a"/>
+                                    <action selector="linkToDatabases:" destination="pui-d5-LGK" eventType="touchUpInside" id="fWu-gO-wsx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXm-Kn-okL">
+                                <rect key="frame" x="254" y="101" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="FAQs">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="linkToFAQs:" destination="pui-d5-LGK" eventType="touchUpInside" id="O8N-4w-bxp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -154,7 +194,8 @@
                     <navigationItem key="navigationItem" id="k3u-17-KEg"/>
                     <connections>
                         <outlet property="linkToCal" destination="TV4-6p-3Pf" id="rft-Gc-DoS"/>
-                        <outlet property="linkToFAQ" destination="vGO-7T-Nwj" id="v3A-mM-7Q2"/>
+                        <outlet property="linkToDatabases" destination="vGO-7T-Nwj" id="3Y0-dZ-Oot"/>
+                        <outlet property="linkToFAQs" destination="nXm-Kn-okL" id="8xT-bf-pgc"/>
                         <outlet property="linkToFeedback" destination="bRa-r7-Xbk" id="h5Q-aH-Uek"/>
                         <outlet property="linkToNewsFeed" destination="qEF-gU-Wos" id="Dct-eA-7IG"/>
                         <outlet property="linkToTextbooks" destination="rLD-h7-84v" id="2lp-Ge-Ba3"/>
@@ -162,7 +203,8 @@
                         <segue destination="Uba-dP-Efb" kind="push" identifier="newsfeedsegue" id="bVR-eE-ZB3"/>
                         <segue destination="sd4-bG-23T" kind="push" identifier="feedbacksegue" id="Mxy-w5-Vqt"/>
                         <segue destination="qKB-8g-ssm" kind="push" identifier="textbooksegue" id="wpu-SK-dC9"/>
-                        <segue destination="0dq-Qh-rIn" kind="push" identifier="showfaq" id="xU1-75-IVA"/>
+                        <segue destination="0dq-Qh-rIn" kind="push" identifier="showdb" id="xU1-75-IVA"/>
+                        <segue destination="ErE-6v-ILr" kind="push" identifier="showfaqs" id="kbr-qW-5xy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiZ-2W-oqN" userLabel="First Responder" sceneMemberID="firstResponder"/>

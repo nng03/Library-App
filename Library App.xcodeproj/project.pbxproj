@@ -10,6 +10,8 @@
 		EA098CB518C1093200A41031 /* TextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA098CB418C1093200A41031 /* TextbookVC.m */; };
 		EA098CBF18C11FD200A41031 /* TextbooksClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA098CBE18C11FD200A41031 /* TextbooksClassVC.m */; };
 		EA1018D51919404D003AF4A7 /* DatabaseResource.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1018D41919404D003AF4A7 /* DatabaseResource.m */; };
+		EA1018DD191AC013003AF4A7 /* FAQVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1018DC191AC013003AF4A7 /* FAQVC.m */; };
+		EA1018E0191AC19B003AF4A7 /* FAQ.m in Sources */ = {isa = PBXBuildFile; fileRef = EA1018DF191AC19B003AF4A7 /* FAQ.m */; };
 		EA2AEE9C18E610D7002C95AE /* CreateTextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2AEE9B18E610D7002C95AE /* CreateTextbookVC.m */; };
 		EA2AEE9F18E61354002C95AE /* viewTextbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2AEE9E18E61354002C95AE /* viewTextbook.m */; };
 		EA2BEA6D18B80C1200970E8E /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BEA6C18B80C1200970E8E /* MainMenuVC.m */; };
@@ -143,6 +145,10 @@
 		EA098CBE18C11FD200A41031 /* TextbooksClassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextbooksClassVC.m; sourceTree = "<group>"; };
 		EA1018D31919404D003AF4A7 /* DatabaseResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseResource.h; sourceTree = "<group>"; };
 		EA1018D41919404D003AF4A7 /* DatabaseResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseResource.m; sourceTree = "<group>"; };
+		EA1018DB191AC013003AF4A7 /* FAQVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQVC.h; sourceTree = "<group>"; };
+		EA1018DC191AC013003AF4A7 /* FAQVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQVC.m; sourceTree = "<group>"; };
+		EA1018DE191AC19B003AF4A7 /* FAQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQ.h; sourceTree = "<group>"; };
+		EA1018DF191AC19B003AF4A7 /* FAQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQ.m; sourceTree = "<group>"; };
 		EA2AEE9A18E610D6002C95AE /* CreateTextbookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTextbookVC.h; sourceTree = "<group>"; };
 		EA2AEE9B18E610D7002C95AE /* CreateTextbookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTextbookVC.m; sourceTree = "<group>"; };
 		EA2AEE9D18E61354002C95AE /* viewTextbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viewTextbook.h; sourceTree = "<group>"; };
@@ -372,6 +378,10 @@
 				EA1018D41919404D003AF4A7 /* DatabaseResource.m */,
 				EA8297381901D04A007839BF /* DatabaseVC.h */,
 				EA8297391901D04A007839BF /* DatabaseVC.m */,
+				EA1018DB191AC013003AF4A7 /* FAQVC.h */,
+				EA1018DC191AC013003AF4A7 /* FAQVC.m */,
+				EA1018DE191AC19B003AF4A7 /* FAQ.h */,
+				EA1018DF191AC19B003AF4A7 /* FAQ.m */,
 				EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */,
 				EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */,
 				EA6C8AA718CA7755005EFBE7 /* TextbookC.h */,
@@ -717,9 +727,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1018E0191AC19B003AF4A7 /* FAQ.m in Sources */,
 				EAFFF8F618EF3F4900510640 /* NSString+URLEncoding.m in Sources */,
 				EAFFF91718EF3F6300510640 /* YOSAccessToken.m in Sources */,
 				EAFFF91D18EF3F6300510640 /* YOSResponseData.m in Sources */,
+				EA1018DD191AC013003AF4A7 /* FAQVC.m in Sources */,
 				EA35E63018A2B4FE0087CE4F /* DetailedRSSVC.m in Sources */,
 				EA3A4978189C294C00EFD00E /* GoogleCal.m in Sources */,
 				EAFFF8F418EF3F4900510640 /* NSData+OAuthResponse.m in Sources */,
