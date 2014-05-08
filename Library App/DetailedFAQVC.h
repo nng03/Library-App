@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FAQ.h"
 
 @interface DetailedFAQVC : UIViewController
+
+@property (strong, nonatomic) FAQ *faq;
 
 @end

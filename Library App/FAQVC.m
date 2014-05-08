@@ -8,11 +8,13 @@
 
 #import "FAQVC.h"
 #import "FAQ.h"
+#import "DetailedFAQVC.h"
 
 @interface FAQVC ()
 
 @property (strong, nonatomic) NSMutableArray *faqs;
 @property (strong, nonatomic) NSMutableArray *indexLabels;
+@property (strong, nonatomic) FAQ *currentFaq;
 
 @end
 
@@ -35,6 +37,7 @@
     [self loadFaqs];
     self.indexLabels = [[NSMutableArray alloc] init];
     self.indexLabels = [self getFirstLetters:self.faqs];
+    self.currentFaq = [[FAQ alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -129,7 +132,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    self.currentFaq = [self.faqs objectAtIndex:indexPath.row];
+    self.currentFaq.description = @"lakjsdflkajskldfjlkajsdfljalksdjflkajdlfkjaklsdjf";
+    [self performSegueWithIdentifier:@"detailedfaq" sender:cell];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"detailedfaq"])
+    {
+        [self prepareDetailedFAQVC:segue.destinationViewController forFaq:self.currentFaq];
+    }
+}
+
+- (void)prepareDetailedFAQVC:(DetailedFAQVC *)dfaqvc forFaq:(FAQ *)faq
+{
+    dfaqvc.faq = self.currentFaq;
 }
 
 - (NSMutableArray *)getFirstLetters:(NSArray *)array
