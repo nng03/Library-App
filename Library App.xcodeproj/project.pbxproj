@@ -15,6 +15,7 @@
 		EA2AEE9C18E610D7002C95AE /* CreateTextbookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2AEE9B18E610D7002C95AE /* CreateTextbookVC.m */; };
 		EA2AEE9F18E61354002C95AE /* viewTextbook.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2AEE9E18E61354002C95AE /* viewTextbook.m */; };
 		EA2BEA6D18B80C1200970E8E /* MainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA2BEA6C18B80C1200970E8E /* MainMenuVC.m */; };
+		EA32516E191BE908006BBF9E /* DetailedFAQVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32516D191BE908006BBF9E /* DetailedFAQVC.m */; };
 		EA35E63018A2B4FE0087CE4F /* DetailedRSSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */; };
 		EA35FAD918A05B59008A36E3 /* RSSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA35FAD818A05B59008A36E3 /* RSSVC.m */; };
 		EA3A4978189C294C00EFD00E /* GoogleCal.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3A4977189C294C00EFD00E /* GoogleCal.m */; };
@@ -155,6 +156,8 @@
 		EA2AEE9E18E61354002C95AE /* viewTextbook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = viewTextbook.m; sourceTree = "<group>"; };
 		EA2BEA6B18B80C1200970E8E /* MainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuVC.h; sourceTree = "<group>"; };
 		EA2BEA6C18B80C1200970E8E /* MainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuVC.m; sourceTree = "<group>"; };
+		EA32516C191BE908006BBF9E /* DetailedFAQVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedFAQVC.h; sourceTree = "<group>"; };
+		EA32516D191BE908006BBF9E /* DetailedFAQVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedFAQVC.m; sourceTree = "<group>"; };
 		EA35E62E18A2B4FE0087CE4F /* DetailedRSSVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedRSSVC.h; sourceTree = "<group>"; };
 		EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedRSSVC.m; sourceTree = "<group>"; };
 		EA35FAD718A05B59008A36E3 /* RSSVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSVC.h; sourceTree = "<group>"; };
@@ -380,6 +383,8 @@
 				EA8297391901D04A007839BF /* DatabaseVC.m */,
 				EA1018DB191AC013003AF4A7 /* FAQVC.h */,
 				EA1018DC191AC013003AF4A7 /* FAQVC.m */,
+				EA32516C191BE908006BBF9E /* DetailedFAQVC.h */,
+				EA32516D191BE908006BBF9E /* DetailedFAQVC.m */,
 				EA1018DE191AC19B003AF4A7 /* FAQ.h */,
 				EA1018DF191AC19B003AF4A7 /* FAQ.m */,
 				EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */,
@@ -750,6 +755,7 @@
 				EAFFF92018EF3F6300510640 /* YOSUser.m in Sources */,
 				EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */,
 				EA55057418F8663C009D4DAF /* Author_Textbook.m in Sources */,
+				EA32516E191BE908006BBF9E /* DetailedFAQVC.m in Sources */,
 				EA7FAD4718A2AB3D007612DA /* MWFeedItem.m in Sources */,
 				EAFFF8FB18EF3F4900510640 /* YOAuthToken.m in Sources */,
 				EA6C8AA918CA7755005EFBE7 /* TextbookC.m in Sources */,

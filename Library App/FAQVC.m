@@ -63,6 +63,7 @@
     {
         FAQ *faq = [[FAQ alloc] init];
         faq.title = [temp objectForKey:@"title"];
+        faq.description = [temp objectForKey:@"description"];
         [self.faqs addObject:faq];
     }
 }
@@ -105,7 +106,6 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     FAQ *faq = [self.faqs objectAtIndex:indexPath.row];
     cell.textLabel.text = faq.title;
-    
     return cell;
 }
 
@@ -125,6 +125,11 @@
         }
     }
     return 0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 - (NSMutableArray *)getFirstLetters:(NSArray *)array

@@ -11,6 +11,6 @@
 @interface FAQ : NSObject
 
 @property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSString *description;
 
 @end
