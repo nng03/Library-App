@@ -11,6 +11,7 @@
 @interface DetailedFAQVC ()
 
 @property (weak, nonatomic) IBOutlet UITextView *faqAnswer;
+@property (weak, nonatomic) IBOutlet UITextView *faqQuestion;
 
 @end
 
@@ -28,11 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = self.faq.title;
+    self.faqQuestion.text = self.faq.title;
+    self.faqQuestion.editable = NO;
+    self.faqQuestion.textAlignment = NSTextAlignmentCenter;
     self.faqAnswer.text = self.faq.description;
     self.faqAnswer.editable = NO;
     self.faqAnswer.textAlignment = NSTextAlignmentCenter;
-    
 }
 
 - (void)didReceiveMemoryWarning

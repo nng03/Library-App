@@ -134,7 +134,6 @@
 {
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     self.currentFaq = [self.faqs objectAtIndex:indexPath.row];
-    self.currentFaq.description = @"lakjsdflkajskldfjlkajsdfljalksdjflkajdlfkjaklsdjf";
     [self performSegueWithIdentifier:@"detailedfaq" sender:cell];
 }
 
