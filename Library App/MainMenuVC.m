@@ -38,6 +38,29 @@
 {
     [super viewDidLoad];
     self.title = @"Bern Dibner Library";
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
+                                    initWithURL:[NSURL
+                                                 URLWithString:@"http://api.researcher.poly.edu/test"]];
+    [request setHTTPMethod:@"post"];
+    [request setValue:@"text/xml"
+   forHTTPHeaderField:@"Content-type"];
+    NSString *xmlString = @"<data><item>Item 1</item><item>Item 2</item></data>";
+    [request setValue:[NSString stringWithFormat:@"%d",
+                       [xmlString length]]
+   forHTTPHeaderField:@"Content-length"];
+    [request setHTTPBody:[xmlString
+                          dataUsingEncoding:NSUTF8StringEncoding]];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+    if(conn)
+    {
+        NSLog(@"%@", @"Connection Successful");
+    }
+    else
+    {
+        NSLog(@"%@", @"Connection could not be made");
+    }
+    NSLog(@"%@", xmlString);
+//    [self testFunc];
 	// Do any additional setup after loading the view.
 }
 
@@ -75,6 +98,35 @@
 - (IBAction)linkToFAQs:(id)sender
 {
     [self performSegueWithIdentifier:@"showfaqs" sender:sender];
+}
+
+- (void)testFunc
+{
+//    NSURL *url = [NSURL URLWithString:@"http://api.researcher.poly.edu/test"];
+//    NSData *data = [NSData dataWithContentsOfURL:url];
+//    NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    NSLog(@"ret=%@", ret);
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
+                                    initWithURL:[NSURL
+                                                 URLWithString:@"http://api.researcher.poly.edu/test"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"text/xml"
+   forHTTPHeaderField:@"Content-type"];
+    NSString *xmlString = @"<data><item>Item 1</item><item>Item 2</item></data>";
+    [request setValue:[NSString stringWithFormat:@"%d",
+                       [xmlString length]]
+    forHTTPHeaderField:@"Content-length"];
+    [request setHTTPBody:[xmlString 
+                          dataUsingEncoding:NSUTF8StringEncoding]];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+    if(conn)
+    {
+        NSLog(@"%@", @"Connection Successful");
+    }
+    else
+    {
+        NSLog(@"%@", @"Connection could not be made");
+    }
 }
 
 @end

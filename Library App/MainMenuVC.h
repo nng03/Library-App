@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainMenuVC : UIViewController
+@interface MainMenuVC : UIViewController <NSURLConnectionDelegate>
 
 @end

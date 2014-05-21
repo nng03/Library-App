@@ -34,10 +34,28 @@
     [super viewDidLoad];
     self.title = @"Frequently Asked Questions";
     self.faqs = [[NSMutableArray alloc] init];
-    [self loadFaqs];
-    self.indexLabels = [[NSMutableArray alloc] init];
-    self.indexLabels = [self getFirstLetters:self.faqs];
-    self.currentFaq = [[FAQ alloc] init];
+    if ([self checkInternet])
+    {
+        [self loadFaqs];
+        self.indexLabels = [[NSMutableArray alloc] init];
+        self.indexLabels = [self getFirstLetters:self.faqs];
+        self.currentFaq = [[FAQ alloc] init];
+    } else
+    {
+        
+    }
+}
+
+- (BOOL)checkInternet
+{
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.google.com"]];
+    if (data)
+    {
+        return true;
+    } else
+    {
+        return false;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,6 +85,7 @@
         FAQ *faq = [[FAQ alloc] init];
         faq.title = [temp objectForKey:@"title"];
         faq.description = [temp objectForKey:@"description"];
+        faq.description = @"LAJDFLJSKLDJFLJSDLFJLKSDJFKLSJDFKLJS";
         [self.faqs addObject:faq];
     }
 }

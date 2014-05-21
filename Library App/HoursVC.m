@@ -33,8 +33,27 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self LoadCalendarData];
+    if ([self checkIfInternet])
+    {
+        [self LoadCalendarData];
+    } else
+    {
+        
+    }
     self.tableView.rowHeight = 55;
+}
+
+- (BOOL)checkIfInternet
+{
+    NSURL *url = [[NSURL alloc] initWithString:@"http://www.google.com"];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    if (data)
+    {
+        return true;
+    } else
+    {
+        return false;
+    }
 }
 
 #pragma mark - Table view data source

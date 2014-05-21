@@ -31,10 +31,28 @@
 {
     [super viewDidLoad];
     self.databases = [[NSMutableArray alloc] init];
-    self.title = @"Databases";
-    [self loadDbResources];
     self.indexLabels = [[NSMutableArray alloc] init];
-    self.indexLabels = [self getFirstLetters:self.databases];
+    self.title = @"Databases";
+    if ([self checkInternet])
+    {
+        [self loadDbResources];
+        self.indexLabels = [self getFirstLetters:self.databases];
+    } else
+    {
+        
+    }
+}
+
+- (BOOL)checkInternet
+{
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://www.google.com"]];
+    if (data)
+    {
+        return true;
+    } else
+    {
+        return false;
+    }
 }
 
 - (void)didReceiveMemoryWarning
