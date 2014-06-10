@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bfL-aP-SZu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bfL-aP-SZu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -61,6 +61,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F22-vG-pbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2354" y="754"/>
+        </scene>
+        <!--Cc - Frequently Asked Questions-->
+        <scene sceneID="EAN-S6-Jqj">
+            <objects>
+                <tableViewController title="Frequently Asked Questions" id="b2r-Rk-XtU" customClass="FAQVCc" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fYd-gd-ngM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="yj4-cp-Koz">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="b2r-Rk-XtU" id="2xg-Ja-n81"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="AOU-vQ-MVr">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AOU-vQ-MVr" id="POI-oc-XpP">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="b3A-8O-YEF" kind="push" identifier="detailedfaq" id="hPy-0U-tCQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b2r-Rk-XtU" id="ZCX-oD-WMR"/>
+                            <outlet property="delegate" destination="b2r-Rk-XtU" id="6Bn-fD-O94"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="0EQ-p1-qgY"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="c2C-Mk-LK6" id="n4l-k2-qoP"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Jh-yr-h0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="O8U-SR-Uel">
+                    <connections>
+                        <outlet property="delegate" destination="b2r-Rk-XtU" id="scx-gf-56F"/>
+                        <outlet property="searchContentsController" destination="b2r-Rk-XtU" id="5P5-kN-4Sp"/>
+                        <outlet property="searchResultsDataSource" destination="b2r-Rk-XtU" id="j5W-Y8-4g3"/>
+                        <outlet property="searchResultsDelegate" destination="b2r-Rk-XtU" id="yJg-1N-v1a"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="c2C-Mk-LK6">
+                    <connections>
+                        <outlet property="delegate" destination="b2r-Rk-XtU" id="gzd-Fb-GhY"/>
+                        <outlet property="searchBar" destination="yj4-cp-Koz" id="pbO-pC-8bc"/>
+                        <outlet property="searchContentsController" destination="b2r-Rk-XtU" id="hnS-tq-wsK"/>
+                        <outlet property="searchResultsDataSource" destination="b2r-Rk-XtU" id="dOS-wo-x27"/>
+                        <outlet property="searchResultsDelegate" destination="b2r-Rk-XtU" id="FLH-Jk-7l8"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2351" y="-1667"/>
         </scene>
         <!--FAQVC-->
         <scene sceneID="cEu-BH-MgN">
@@ -133,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKH-kC-vY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3066" y="-765"/>
+            <point key="canvasLocation" x="2842" y="-1373"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j2K-6Y-c0p">
@@ -698,6 +758,24 @@
             </objects>
             <point key="canvasLocation" x="2442" y="-762"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RRb-rM-ZXW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7fD-wc-5sk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ikc-fs-8Zh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b2r-Rk-XtU" kind="relationship" relationship="rootViewController" id="A1u-nK-sjz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Bd-oD-D2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1825" y="-1667"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -705,11 +783,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="uFB-fC-Ev2"/>
         <segue reference="tMj-xN-1Uw"/>
-        <segue reference="wpu-SK-dC9"/>
+        <segue reference="hPy-0U-tCQ"/>
+        <segue reference="BnG-CU-lki"/>
         <segue reference="Mxy-w5-Vqt"/>
-        <segue reference="fDO-et-Erg"/>
         <segue reference="bVR-eE-ZB3"/>
-        <segue reference="vX4-em-lZr"/>
     </inferredMetricsTieBreakers>
 </document>

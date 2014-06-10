@@ -10,14 +10,17 @@
 #import "HoursVC.h"
 #import "RSSVC.h"
 #import "FeedbackVC.h"
+#import "FAQ.h"
 
 @interface MainMenuVC ()
+
 @property (weak, nonatomic) IBOutlet UIButton *linkToCal;
 @property (weak, nonatomic) IBOutlet UIButton *linkToNewsFeed;
 @property (weak, nonatomic) IBOutlet UIButton *linkToFeedback;
 @property (weak, nonatomic) IBOutlet UIButton *linkToTextbooks;
 @property (weak, nonatomic) IBOutlet UIButton *linkToDatabases;
 @property (weak, nonatomic) IBOutlet UIButton *linkToFAQs;
+@property (strong, nonatomic) NSMutableData *responseData;
 
 @end
 
@@ -38,30 +41,7 @@
 {
     [super viewDidLoad];
     self.title = @"Bern Dibner Library";
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
-                                    initWithURL:[NSURL
-                                                 URLWithString:@"http://api.researcher.poly.edu/test"]];
-    [request setHTTPMethod:@"post"];
-    [request setValue:@"text/xml"
-   forHTTPHeaderField:@"Content-type"];
-    NSString *xmlString = @"<data><item>Item 1</item><item>Item 2</item></data>";
-    [request setValue:[NSString stringWithFormat:@"%d",
-                       [xmlString length]]
-   forHTTPHeaderField:@"Content-length"];
-    [request setHTTPBody:[xmlString
-                          dataUsingEncoding:NSUTF8StringEncoding]];
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
-    if(conn)
-    {
-        NSLog(@"%@", @"Connection Successful");
-    }
-    else
-    {
-        NSLog(@"%@", @"Connection could not be made");
-    }
-    NSLog(@"%@", xmlString);
-//    [self testFunc];
-	// Do any additional setup after loading the view.
+    [self testFunc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -102,31 +82,30 @@
 
 - (void)testFunc
 {
-//    NSURL *url = [NSURL URLWithString:@"http://api.researcher.poly.edu/test"];
-//    NSData *data = [NSData dataWithContentsOfURL:url];
-//    NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//    NSLog(@"ret=%@", ret);
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
-                                    initWithURL:[NSURL
-                                                 URLWithString:@"http://api.researcher.poly.edu/test"]];
+    NSString *searchQuery = @"itaque ut";
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.researcher.poly.edu/test"]];
     [request setHTTPMethod:@"POST"];
-    [request setValue:@"text/xml"
-   forHTTPHeaderField:@"Content-type"];
-    NSString *xmlString = @"<data><item>Item 1</item><item>Item 2</item></data>";
-    [request setValue:[NSString stringWithFormat:@"%d",
-                       [xmlString length]]
-    forHTTPHeaderField:@"Content-length"];
-    [request setHTTPBody:[xmlString 
-                          dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *temp = [NSString stringWithFormat:@"searchQuery=%@", searchQuery];
+    NSData *postData = [NSData dataWithBytes:[temp UTF8String] length:[temp length]];
+    [request setHTTPBody:postData];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
-    if(conn)
-    {
-        NSLog(@"%@", @"Connection Successful");
-    }
-    else
-    {
-        NSLog(@"%@", @"Connection could not be made");
-    }
+    [conn start];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    self.responseData = [NSMutableData data];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.responseData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"response data - %@", [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding]);
+    
 }
 
 @end

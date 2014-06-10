@@ -53,6 +53,7 @@
 		EAB420F518A57979000A1831 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F418A57979000A1831 /* CFNetwork.framework */; };
 		EAB420F718A57981000A1831 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F618A57981000A1831 /* Security.framework */; };
 		EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */; };
+		EAF8434D1937930B0068B391 /* FAQVCc.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF8434C1937930B0068B391 /* FAQVCc.m */; };
 		EAFFF8D818EF3F0F00510640 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8D318EF3F0F00510640 /* NSObject+SBJSON.m */; };
 		EAFFF8D918EF3F0F00510640 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8D518EF3F0F00510640 /* NSString+SBJSON.m */; };
 		EAFFF8DA18EF3F0F00510640 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFFF8D718EF3F0F00510640 /* SBJSON.m */; };
@@ -219,6 +220,8 @@
 		EAB420F618A57981000A1831 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
 		EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
+		EAF8434B1937930B0068B391 /* FAQVCc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQVCc.h; sourceTree = "<group>"; };
+		EAF8434C1937930B0068B391 /* FAQVCc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQVCc.m; sourceTree = "<group>"; };
 		EAFFF8BB18EF3D6D00510640 /* YahooSocialSdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YahooSocialSdk.xcodeproj; path = "../../../yos-social-objc-master/YahooSocialSdk.xcodeproj"; sourceTree = "<group>"; };
 		EAFFF8D118EF3F0F00510640 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		EAFFF8D218EF3F0F00510640 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
@@ -373,8 +376,8 @@
 				EA5D58D7189700AD005A9C47 /* HoursVC.m */,
 				EA3A4976189C294C00EFD00E /* GoogleCal.h */,
 				EA3A4977189C294C00EFD00E /* GoogleCal.m */,
-				EA35FAD718A05B59008A36E3 /* RSSVC.h */,
 				EA35FAD818A05B59008A36E3 /* RSSVC.m */,
+				EA35FAD718A05B59008A36E3 /* RSSVC.h */,
 				EA35E62E18A2B4FE0087CE4F /* DetailedRSSVC.h */,
 				EA35E62F18A2B4FE0087CE4F /* DetailedRSSVC.m */,
 				EA1018D31919404D003AF4A7 /* DatabaseResource.h */,
@@ -383,6 +386,8 @@
 				EA8297391901D04A007839BF /* DatabaseVC.m */,
 				EA1018DB191AC013003AF4A7 /* FAQVC.h */,
 				EA1018DC191AC013003AF4A7 /* FAQVC.m */,
+				EAF8434B1937930B0068B391 /* FAQVCc.h */,
+				EAF8434C1937930B0068B391 /* FAQVCc.m */,
 				EA32516C191BE908006BBF9E /* DetailedFAQVC.h */,
 				EA32516D191BE908006BBF9E /* DetailedFAQVC.m */,
 				EA1018DE191AC19B003AF4A7 /* FAQ.h */,
@@ -756,6 +761,7 @@
 				EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */,
 				EA55057418F8663C009D4DAF /* Author_Textbook.m in Sources */,
 				EA32516E191BE908006BBF9E /* DetailedFAQVC.m in Sources */,
+				EAF8434D1937930B0068B391 /* FAQVCc.m in Sources */,
 				EA7FAD4718A2AB3D007612DA /* MWFeedItem.m in Sources */,
 				EAFFF8FB18EF3F4900510640 /* YOAuthToken.m in Sources */,
 				EA6C8AA918CA7755005EFBE7 /* TextbookC.m in Sources */,
