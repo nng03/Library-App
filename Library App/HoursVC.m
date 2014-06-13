@@ -32,13 +32,12 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.title = @"Library Hours";
     [super viewWillAppear:animated];
+    
     if ([self checkIfInternet])
     {
         [self LoadCalendarData];
-    } else
-    {
-        
     }
     self.tableView.rowHeight = 55;
 }
