@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *menuView;
 @property (weak, nonatomic) IBOutlet UIButton *cancelMenu;
 @property (weak, nonatomic) IBOutlet UIButton *linkToHours;
+@property (weak, nonatomic) IBOutlet UIView *menu;
 @property (nonatomic) BOOL movedUp;
 @property (nonatomic) BOOL menuButtonPressed;
 
@@ -34,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     self.navigationController.navigationBar.hidden = YES;
     self.menuButtonPressed = NO;
     UIInterpolatingMotionEffect *horizontalMotionEffect =
@@ -71,11 +73,13 @@
         rect.origin.y -= AMOUNT_TO_MOVE_UP;
         rect.size.height += AMOUNT_TO_MOVE_UP;
         self.movedUp = YES;
+        self.menuButton.hidden = YES;
     } else if (self.movedUp && !self.menuButtonPressed)
     {
         rect.origin.y += AMOUNT_TO_MOVE_UP;
         rect.size.height -= AMOUNT_TO_MOVE_UP;
         self.movedUp = NO;
+        self.menuButton.hidden = NO;
     }
     self.scrollView.frame = rect;
     [UIView commitAnimations];
@@ -91,6 +95,7 @@
         rect.origin.y -= AMOUNT_TO_MOVE_UP;
         rect.size.height += AMOUNT_TO_MOVE_UP;
         self.movedUp = YES;
+        self.menuButton.hidden = YES;
         self.scrollView.frame = rect;
         [UIView commitAnimations];
     }
@@ -106,6 +111,7 @@
         rect.origin.y += AMOUNT_TO_MOVE_UP;
         rect.size.height -= AMOUNT_TO_MOVE_UP;
         self.movedUp = NO;
+        self.menuButton.hidden = NO;
         self.scrollView.frame = rect;
         [UIView commitAnimations];
     }
@@ -114,27 +120,22 @@
 - (IBAction)touchedMenuButton:(id)sender
 {
     self.menuButtonPressed = YES;
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    CGRect rect = self.menuView.frame;
-    rect.origin.y += 400.0;
-    rect.size.height -= 400.0;
-    self.menuView.frame = rect;
-    [UIView commitAnimations];
+    [self.menuView setAlpha:0.f];
     [self.view bringSubviewToFront:self.menuView];
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.3];
-    CGRect rect2 = self.menuView.frame;
-    rect.origin.y -= AMOUNT_TO_MOVE_UP;
-    rect.size.height += AMOUNT_TO_MOVE_UP;
-    self.menuView.frame = rect2;
+    [UIView setAnimationDuration:0.5];
+    [self.menuView setAlpha:1.0f];
     [UIView commitAnimations];
 }
 
 - (IBAction)cancelMenu:(id)sender
 {
     self.menuButtonPressed = NO;
-    [self.view insertSubview:self.menuView belowSubview:self.movingImage];
+    [self.menuView setAlpha:1.0f];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    [self.menuView setAlpha:0.f];
+    [UIView commitAnimations];
 }
 
 - (void)didReceiveMemoryWarning

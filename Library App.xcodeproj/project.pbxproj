@@ -56,6 +56,9 @@
 		EA7FAD4A18A2AB3D007612DA /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7FAD4418A2AB3D007612DA /* GTMNSString+HTML.m */; };
 		EA816A9419478A670091ADD1 /* HomeViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA816A9319478A670091ADD1 /* HomeViewVC.m */; };
 		EA82973A1901D04A007839BF /* DatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8297391901D04A007839BF /* DatabaseVC.m */; };
+		EAA1BD8E194B74F9008C3E94 /* icon_menu_closes.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA1BD8D194B74F9008C3E94 /* icon_menu_closes.png */; };
+		EAA1BD90194B775F008C3E94 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA1BD8F194B775F008C3E94 /* logo.png */; };
+		EAA1BD92194B7973008C3E94 /* icon_menubutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA1BD91194B7973008C3E94 /* icon_menubutton.png */; };
 		EAB420F518A57979000A1831 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F418A57979000A1831 /* CFNetwork.framework */; };
 		EAB420F718A57981000A1831 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F618A57981000A1831 /* Security.framework */; };
 		EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */; };
@@ -229,6 +232,9 @@
 		EA816A9319478A670091ADD1 /* HomeViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewVC.m; sourceTree = "<group>"; };
 		EA8297381901D04A007839BF /* DatabaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseVC.h; sourceTree = "<group>"; };
 		EA8297391901D04A007839BF /* DatabaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseVC.m; sourceTree = "<group>"; };
+		EAA1BD8D194B74F9008C3E94 /* icon_menu_closes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menu_closes.png; sourceTree = "<group>"; };
+		EAA1BD8F194B775F008C3E94 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		EAA1BD91194B7973008C3E94 /* icon_menubutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menubutton.png; sourceTree = "<group>"; };
 		EAB420F418A57979000A1831 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EAB420F618A57981000A1831 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
@@ -438,7 +444,10 @@
 		EA5D58A81896FF39005A9C47 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EAA1BD91194B7973008C3E94 /* icon_menubutton.png */,
+				EAA1BD8F194B775F008C3E94 /* logo.png */,
 				EA30F769194A02A5007BF9B5 /* 11497631615_58cdb0bd24_o.jpg */,
+				EAA1BD8D194B74F9008C3E94 /* icon_menu_closes.png */,
 				EA30F7621947991A007BF9B5 /* 10489357655_e7c867ceb0_h.jpg */,
 				EA5F178B19478D7100DEC735 /* libraries-poly.png */,
 				EA5F178C19478D7100DEC735 /* logo_nyu_white.png */,
@@ -738,12 +747,15 @@
 			files = (
 				EA30F7631947991A007BF9B5 /* 10489357655_e7c867ceb0_h.jpg in Resources */,
 				EA5D58BA1896FF39005A9C47 /* Images.xcassets in Resources */,
+				EAA1BD92194B7973008C3E94 /* icon_menubutton.png in Resources */,
 				EA5D58AC1896FF39005A9C47 /* InfoPlist.strings in Resources */,
 				EA5F178F19478D7100DEC735 /* logo_nyu_white.png in Resources */,
 				EA5D58B51896FF39005A9C47 /* Main.storyboard in Resources */,
 				EA5F178E19478D7100DEC735 /* libraries-poly.png in Resources */,
+				EAA1BD90194B775F008C3E94 /* logo.png in Resources */,
 				EA30F76A194A02A5007BF9B5 /* 11497631615_58cdb0bd24_o.jpg in Resources */,
 				EA5F179019478D7100DEC735 /* logo_white_nyu.png in Resources */,
+				EAA1BD8E194B74F9008C3E94 /* icon_menu_closes.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
