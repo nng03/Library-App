@@ -589,11 +589,19 @@
                                 <rect key="frame" x="0.0" y="81" width="320" height="302"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-b8-aT1">
-                                        <rect key="frame" x="271" y="6" width="40" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-b8-aT1">
+                                        <rect key="frame" x="230" y="275" width="70" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="icon_menu_closes.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Close Menu">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                        <font key="NSFont" size="11" name="HelveticaNeue-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                         <connections>
                                             <action selector="cancelMenu:" destination="TMx-TH-hBs" eventType="touchUpInside" id="P88-4T-9c1"/>
@@ -700,10 +708,6 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="kLr-pG-YHD">
-                                        <rect key="frame" x="20" y="20" width="201" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -794,23 +798,21 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
-                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c81-3I-Z2Y">
-                                <rect key="frame" x="105" y="216" width="110" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OpA-rf-WJa">
+                                <rect key="frame" x="89" y="253" width="143" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Menu">
+                                        <fragment content="asdfasdf">
                                             <attributes>
-                                                <color key="NSBackgroundColor" red="0.21960785984992981" green="0.21960785984992981" blue="0.21960785984992981" alpha="0.0" colorSpace="deviceRGB"/>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <font key="NSFont" size="24" name="HelveticaNeue-CondensedBold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                <font key="NSFont" metaFont="toolTip"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="touchedMenuButton:" destination="TMx-TH-hBs" eventType="touchUpInside" id="LfT-q4-hDO"/>
+                                    <action selector="touchedMenuButton:" destination="TMx-TH-hBs" eventType="touchUpInside" id="aHk-wk-7KQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -821,7 +823,7 @@
                     <connections>
                         <outlet property="cancelMenu" destination="dx9-b8-aT1" id="Tcl-f3-jjN"/>
                         <outlet property="linkToHours" destination="C60-09-fBT" id="riw-Dt-tbI"/>
-                        <outlet property="menuButton" destination="c81-3I-Z2Y" id="cQC-sD-dVz"/>
+                        <outlet property="menuButton" destination="OpA-rf-WJa" id="WrK-rg-jHz"/>
                         <outlet property="menuView" destination="MeO-Fy-vhU" id="DAE-iM-0Dm"/>
                         <outlet property="movingImage" destination="MAe-CF-4aj" id="UKf-OZ-Zpb"/>
                         <outlet property="scrollView" destination="5qk-Ti-BaX" id="Civ-MP-R57"/>
@@ -1033,9 +1035,7 @@
     </scenes>
     <resources>
         <image name="11497631615_58cdb0bd24_o.jpg" width="1800" height="1200"/>
-        <image name="icon_menu_closes.png" width="90" height="90"/>
         <image name="libraries-poly.png" width="985" height="113"/>
-        <image name="logo.png" width="247" height="46"/>
         <image name="logo_white_nyu" width="331" height="113"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

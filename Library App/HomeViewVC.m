@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIView *menuView;
 @property (weak, nonatomic) IBOutlet UIButton *cancelMenu;
 @property (weak, nonatomic) IBOutlet UIButton *linkToHours;
-@property (weak, nonatomic) IBOutlet UIView *menu;
 @property (nonatomic) BOOL movedUp;
 @property (nonatomic) BOOL menuButtonPressed;
 
@@ -32,12 +31,26 @@
     return self;
 }
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     self.navigationController.navigationBar.hidden = YES;
     self.menuButtonPressed = NO;
+    self.menuButton.layer.cornerRadius = 5;
+    [[self.menuButton layer] setBorderColor:[UIColor whiteColor].CGColor];
+    [[self.menuButton layer] setBorderWidth:3.0f];
+    self.menuButton.clipsToBounds = YES;
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"MENU"];
+    [attributedString addAttribute:NSKernAttributeName value:@(1.4) range:NSMakeRange(0, 4)];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, 4)];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:28] range:NSMakeRange(0, 4)];
+    [self.menuButton setAttributedTitle:attributedString forState:UIControlStateNormal];
+    UIEdgeInsets inset = UIEdgeInsetsMake(25, 25, 25, 25);
+    [self.menuButton setTitleEdgeInsets:inset];
+    [self.menuButton sizeToFit];
     UIInterpolatingMotionEffect *horizontalMotionEffect =
     [[UIInterpolatingMotionEffect alloc]
      initWithKeyPath:@"center.x"
@@ -80,6 +93,22 @@
         rect.size.height -= AMOUNT_TO_MOVE_UP;
         self.movedUp = NO;
         self.menuButton.hidden = NO;
+    } else if (!self.movedUp && self.menuButtonPressed)
+    {
+        [self cancelMenu];
+        [self.view bringSubviewToFront:self.scrollView];
+        rect.origin.y -= AMOUNT_TO_MOVE_UP;
+        rect.size.height += AMOUNT_TO_MOVE_UP;
+        self.movedUp = YES;
+        self.menuButton.hidden = YES;
+    } else if (self.movedUp && self.menuButtonPressed)
+    {
+        [self cancelMenu];
+        [self.view bringSubviewToFront:self.scrollView];
+        rect.origin.y += AMOUNT_TO_MOVE_UP;
+        rect.size.height -= AMOUNT_TO_MOVE_UP;
+        self.movedUp = NO;
+        self.menuButton.hidden = NO;
     }
     self.scrollView.frame = rect;
     [UIView commitAnimations];
@@ -111,9 +140,9 @@
         rect.origin.y += AMOUNT_TO_MOVE_UP;
         rect.size.height -= AMOUNT_TO_MOVE_UP;
         self.movedUp = NO;
-        self.menuButton.hidden = NO;
         self.scrollView.frame = rect;
         [UIView commitAnimations];
+        self.menuButton.hidden = NO;
     }
 }
 
