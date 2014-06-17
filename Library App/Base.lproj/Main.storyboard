@@ -585,7 +585,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MeO-Fy-vhU">
+                            <view alpha="0.69999999999999973" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MeO-Fy-vhU">
                                 <rect key="frame" x="0.0" y="81" width="320" height="302"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -653,7 +653,7 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k11-n4-Gmk">
-                                        <rect key="frame" x="20" y="94" width="161" height="21"/>
+                                        <rect key="frame" x="20" y="94" width="120" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Wednesday">
@@ -695,21 +695,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpT-VR-R7s">
-                                        <rect key="frame" x="171" y="94" width="161" height="21"/>
+                                        <rect key="frame" x="171" y="94" width="124" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="9AM - 8PM">
+                                            <fragment content="9AM - 9PM">
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="24" name="HelveticaNeue-CondensedBlack"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <font key="NSFont" size="24" name="HelveticaNeue-CondensedBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.2196078431372549" green="0.2196078431372549" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11497631615_58cdb0bd24_o.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MAe-CF-4aj">
                                 <rect key="frame" x="-210" y="59" width="690" height="368"/>
@@ -726,6 +726,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.34117648005485535" green="0.062745101749897003" blue="0.54901963472366333" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_feature_gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="cxr-wb-9Nv">
+                                <rect key="frame" x="-67" y="237" width="455" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="5qk-Ti-BaX">
                                 <rect key="frame" x="0.0" y="382" width="320" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -799,17 +803,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OpA-rf-WJa">
-                                <rect key="frame" x="89" y="253" width="143" height="61"/>
+                                <rect key="frame" x="138" y="296" width="45" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="asdfasdf">
-                                            <attributes>
-                                                <font key="NSFont" metaFont="toolTip"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                <state key="normal" image="icon_menubutton.png">
+                                    <attributedString key="attributedTitle"/>
                                 </state>
                                 <connections>
                                     <action selector="touchedMenuButton:" destination="TMx-TH-hBs" eventType="touchUpInside" id="aHk-wk-7KQ"/>
@@ -822,11 +819,15 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="cancelMenu" destination="dx9-b8-aT1" id="Tcl-f3-jjN"/>
+                        <outlet property="currentDate" destination="4VK-9F-chG" id="12p-Om-3OC"/>
+                        <outlet property="currentDay" destination="k11-n4-Gmk" id="pBJ-yl-5LZ"/>
+                        <outlet property="gradientView" destination="cxr-wb-9Nv" id="ex4-q9-e43"/>
                         <outlet property="linkToHours" destination="C60-09-fBT" id="riw-Dt-tbI"/>
                         <outlet property="menuButton" destination="OpA-rf-WJa" id="WrK-rg-jHz"/>
                         <outlet property="menuView" destination="MeO-Fy-vhU" id="DAE-iM-0Dm"/>
                         <outlet property="movingImage" destination="MAe-CF-4aj" id="UKf-OZ-Zpb"/>
                         <outlet property="scrollView" destination="5qk-Ti-BaX" id="Civ-MP-R57"/>
+                        <outlet property="todayHours" destination="jpT-VR-R7s" id="izg-Rx-Qzc"/>
                         <segue destination="2XT-2C-yKQ" kind="push" identifier="hours" id="DPE-Sa-bPd"/>
                     </connections>
                 </viewController>
@@ -978,6 +979,74 @@
             </objects>
             <point key="canvasLocation" x="4530" y="-742"/>
         </scene>
+        <!--Home View2VC-->
+        <scene sceneID="bb7-V3-pxo">
+            <objects>
+                <viewController id="ve3-mn-ryn" customClass="HomeView2VC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ofe-62-R19"/>
+                        <viewControllerLayoutGuide type="bottom" id="BCE-FA-0fh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pRg-Jn-xkV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUs-7d-hqr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="libraries-poly.png" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-9P-6ce">
+                                        <rect key="frame" x="117" y="40" width="183" height="22"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_white_nyu" translatesAutoresizingMaskIntoConstraints="NO" id="ROu-8t-Rd7">
+                                        <rect key="frame" x="20" y="40" width="62" height="21"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.34117648010000001" green="0.062745101750000004" blue="0.54901963470000004" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ysr-aZ-QjB">
+                                <rect key="frame" x="0.0" y="81" width="320" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeZ-5v-Utr">
+                                        <rect key="frame" x="20" y="5" width="67" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Library Hours">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="12" name="HelveticaNeue-CondensedBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNw-eA-LYf">
+                                        <rect key="frame" x="20" y="25" width="120" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="9AM - 8PM">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="15" name="HelveticaNeue-CondensedBold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.24705882352941178" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WXz-mA-AHF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2lf-i8-WN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1526" y="-2853"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="RRb-rM-ZXW">
             <objects>
@@ -1032,9 +1101,29 @@
             </objects>
             <point key="canvasLocation" x="2199" y="-242"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MTN-yP-Om9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f0x-LT-ncj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CFM-B9-AmF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ve3-mn-ryn" kind="relationship" relationship="rootViewController" id="l0x-yU-0EE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8b-c0-pUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="-2853"/>
+        </scene>
     </scenes>
     <resources>
         <image name="11497631615_58cdb0bd24_o.jpg" width="1800" height="1200"/>
+        <image name="background_feature_gradient.png" width="640" height="286"/>
+        <image name="icon_menubutton.png" width="227" height="279"/>
         <image name="libraries-poly.png" width="985" height="113"/>
         <image name="logo_white_nyu" width="331" height="113"/>
     </resources>

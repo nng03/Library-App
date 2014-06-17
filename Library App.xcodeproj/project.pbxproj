@@ -58,7 +58,10 @@
 		EA82973A1901D04A007839BF /* DatabaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8297391901D04A007839BF /* DatabaseVC.m */; };
 		EAA1BD8E194B74F9008C3E94 /* icon_menu_closes.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA1BD8D194B74F9008C3E94 /* icon_menu_closes.png */; };
 		EAA1BD90194B775F008C3E94 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA1BD8F194B775F008C3E94 /* logo.png */; };
-		EAA1BD92194B7973008C3E94 /* icon_menubutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA1BD91194B7973008C3E94 /* icon_menubutton.png */; };
+		EAA5DB6F194F4F7D002736F0 /* HomeView2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5DB6E194F4F7D002736F0 /* HomeView2VC.m */; };
+		EAA5DB76194F754E002736F0 /* background_feature_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA5DB75194F754E002736F0 /* background_feature_gradient.png */; };
+		EAA5DB78194F75F2002736F0 /* icon_menubutton.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA5DB77194F75F2002736F0 /* icon_menubutton.png */; };
+		EAA5DB7A194F7BEF002736F0 /* fake_icon_menu_feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = EAA5DB79194F7BEF002736F0 /* fake_icon_menu_feedback.png */; };
 		EAB420F518A57979000A1831 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F418A57979000A1831 /* CFNetwork.framework */; };
 		EAB420F718A57981000A1831 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB420F618A57981000A1831 /* Security.framework */; };
 		EABFDD8F18A54B050044E7E4 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */; };
@@ -234,7 +237,11 @@
 		EA8297391901D04A007839BF /* DatabaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseVC.m; sourceTree = "<group>"; };
 		EAA1BD8D194B74F9008C3E94 /* icon_menu_closes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menu_closes.png; sourceTree = "<group>"; };
 		EAA1BD8F194B775F008C3E94 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		EAA1BD91194B7973008C3E94 /* icon_menubutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menubutton.png; sourceTree = "<group>"; };
+		EAA5DB6D194F4F7D002736F0 /* HomeView2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView2VC.h; sourceTree = "<group>"; };
+		EAA5DB6E194F4F7D002736F0 /* HomeView2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView2VC.m; sourceTree = "<group>"; };
+		EAA5DB75194F754E002736F0 /* background_feature_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_feature_gradient.png; sourceTree = "<group>"; };
+		EAA5DB77194F75F2002736F0 /* icon_menubutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menubutton.png; sourceTree = "<group>"; };
+		EAA5DB79194F7BEF002736F0 /* fake_icon_menu_feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fake_icon_menu_feedback.png; sourceTree = "<group>"; };
 		EAB420F418A57979000A1831 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EAB420F618A57981000A1831 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		EABFDD8D18A54B050044E7E4 /* FeedbackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
@@ -401,6 +408,8 @@
 				EA5D58B01896FF39005A9C47 /* AppDelegate.h */,
 				EA5D58B11896FF39005A9C47 /* AppDelegate.m */,
 				EA5D58B31896FF39005A9C47 /* Main.storyboard */,
+				EAA5DB6D194F4F7D002736F0 /* HomeView2VC.h */,
+				EAA5DB6E194F4F7D002736F0 /* HomeView2VC.m */,
 				EA816A9219478A670091ADD1 /* HomeViewVC.h */,
 				EA816A9319478A670091ADD1 /* HomeViewVC.m */,
 				EA2BEA6B18B80C1200970E8E /* MainMenuVC.h */,
@@ -444,7 +453,9 @@
 		EA5D58A81896FF39005A9C47 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EAA1BD91194B7973008C3E94 /* icon_menubutton.png */,
+				EAA5DB79194F7BEF002736F0 /* fake_icon_menu_feedback.png */,
+				EAA5DB77194F75F2002736F0 /* icon_menubutton.png */,
+				EAA5DB75194F754E002736F0 /* background_feature_gradient.png */,
 				EAA1BD8F194B775F008C3E94 /* logo.png */,
 				EA30F769194A02A5007BF9B5 /* 11497631615_58cdb0bd24_o.jpg */,
 				EAA1BD8D194B74F9008C3E94 /* icon_menu_closes.png */,
@@ -747,7 +758,7 @@
 			files = (
 				EA30F7631947991A007BF9B5 /* 10489357655_e7c867ceb0_h.jpg in Resources */,
 				EA5D58BA1896FF39005A9C47 /* Images.xcassets in Resources */,
-				EAA1BD92194B7973008C3E94 /* icon_menubutton.png in Resources */,
+				EAA5DB76194F754E002736F0 /* background_feature_gradient.png in Resources */,
 				EA5D58AC1896FF39005A9C47 /* InfoPlist.strings in Resources */,
 				EA5F178F19478D7100DEC735 /* logo_nyu_white.png in Resources */,
 				EA5D58B51896FF39005A9C47 /* Main.storyboard in Resources */,
@@ -756,6 +767,8 @@
 				EA30F76A194A02A5007BF9B5 /* 11497631615_58cdb0bd24_o.jpg in Resources */,
 				EA5F179019478D7100DEC735 /* logo_white_nyu.png in Resources */,
 				EAA1BD8E194B74F9008C3E94 /* icon_menu_closes.png in Resources */,
+				EAA5DB78194F75F2002736F0 /* icon_menubutton.png in Resources */,
+				EAA5DB7A194F7BEF002736F0 /* fake_icon_menu_feedback.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +830,7 @@
 				EA67846718BBE41F00BAF544 /* Textbooks.xcdatamodeld in Sources */,
 				EA82973A1901D04A007839BF /* DatabaseVC.m in Sources */,
 				EA7FAD4918A2AB3D007612DA /* NSDate+InternetDateTime.m in Sources */,
+				EAA5DB6F194F4F7D002736F0 /* HomeView2VC.m in Sources */,
 				EAFFF8D818EF3F0F00510640 /* NSObject+SBJSON.m in Sources */,
 				EA5D58B21896FF39005A9C47 /* AppDelegate.m in Sources */,
 				EA5D58D8189700AD005A9C47 /* HoursVC.m in Sources */,
