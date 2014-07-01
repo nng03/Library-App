@@ -590,70 +590,55 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-b8-aT1">
-                                        <rect key="frame" x="230" y="275" width="70" height="22"/>
+                                        <rect key="frame" x="196" y="277" width="106" height="11"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Close Menu">
-                                                    <attributes>
-                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                                        <font key="NSFont" size="11" name="HelveticaNeue-Medium"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <state key="normal" image="icon_menu_closebutton.png">
+                                            <attributedString key="attributedTitle"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelMenu:" destination="TMx-TH-hBs" eventType="touchUpInside" id="P88-4T-9c1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GI-VT-YWI">
-                                        <rect key="frame" x="135" y="172" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4GI-VT-YWI">
+                                        <rect key="frame" x="14" y="192" width="56" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Databases">
+                                        <state key="normal" image="icon_databases.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRv-fM-P2M">
-                                        <rect key="frame" x="20" y="210" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRv-fM-P2M">
+                                        <rect key="frame" x="258" y="192" width="31" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="FAQs">
+                                        <state key="normal" image="icon_faq.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C60-09-fBT">
-                                        <rect key="frame" x="81" y="210" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C60-09-fBT">
+                                        <rect key="frame" x="20" y="116" width="45" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Hours">
+                                        <state key="normal" image="icon_calendar.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="linkToHours:" destination="TMx-TH-hBs" eventType="touchUpInside" id="c7C-n3-YBL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpB-4j-oL8">
-                                        <rect key="frame" x="135" y="210" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XpB-4j-oL8">
+                                        <rect key="frame" x="132" y="116" width="53" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="News Feed">
+                                        <state key="normal" image="icon_newsfeed.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMY-s7-v32">
-                                        <rect key="frame" x="202" y="210" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMY-s7-v32">
+                                        <rect key="frame" x="132" y="192" width="52" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Feedback">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6J-XK-E1k">
-                                        <rect key="frame" x="256" y="210" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Textbook">
+                                        <state key="normal" image="icon_feedback.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k11-n4-Gmk">
-                                        <rect key="frame" x="20" y="94" width="120" height="28"/>
+                                        <rect key="frame" x="20" y="47" width="120" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Wednesday">
@@ -667,13 +652,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VK-9F-chG">
-                                        <rect key="frame" x="20" y="74" width="161" height="21"/>
+                                        <rect key="frame" x="20" y="27" width="161" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="September 31, 2014">
                                                 <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="14" name="HelveticaNeue-CondensedBold"/>
+                                                    <color key="NSColor" red="0.80000000000000004" green="0.65098039215686276" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="12" name="HelveticaNeue-CondensedBold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
@@ -681,13 +666,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3K-Xg-zSa">
-                                        <rect key="frame" x="171" y="74" width="79" height="21"/>
+                                        <rect key="frame" x="171" y="27" width="79" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Library Hours">
                                                 <attributes>
-                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="14" name="HelveticaNeue-CondensedBold"/>
+                                                    <color key="NSColor" red="0.80000000000000004" green="0.65098039215686276" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="12" name="HelveticaNeue-CondensedBold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
@@ -695,10 +680,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jpT-VR-R7s">
-                                        <rect key="frame" x="171" y="94" width="124" height="28"/>
+                                        <rect key="frame" x="171" y="47" width="129" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="9AM - 9PM">
+                                            <fragment content="12AM - 12PM">
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <font key="NSFont" size="24" name="HelveticaNeue-CondensedBold"/>
@@ -708,6 +693,30 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6J-XK-E1k">
+                                        <rect key="frame" x="246" y="116" width="54" height="55"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icon_bookshelf.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMy-fK-d4Z">
+                                        <rect key="frame" x="20" y="277" width="115" height="11"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icon_menu_phone.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="linkToCall:" destination="TMx-TH-hBs" eventType="touchUpInside" id="lmS-IJ-eXz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7U-G3-7u4">
+                                        <rect key="frame" x="5" y="262" width="310" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="line_menu_footer.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -727,7 +736,7 @@
                                 <color key="backgroundColor" red="0.34117648005485535" green="0.062745101749897003" blue="0.54901963472366333" alpha="1" colorSpace="deviceRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_feature_gradient.png" translatesAutoresizingMaskIntoConstraints="NO" id="cxr-wb-9Nv">
-                                <rect key="frame" x="-67" y="237" width="455" height="174"/>
+                                <rect key="frame" x="-67" y="237" width="454" height="174"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="5qk-Ti-BaX">
@@ -780,7 +789,7 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-b6-kmz">
+                                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-b6-kmz">
                                         <rect key="frame" x="20" y="130" width="280" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
@@ -822,10 +831,14 @@
                         <outlet property="currentDate" destination="4VK-9F-chG" id="12p-Om-3OC"/>
                         <outlet property="currentDay" destination="k11-n4-Gmk" id="pBJ-yl-5LZ"/>
                         <outlet property="gradientView" destination="cxr-wb-9Nv" id="ex4-q9-e43"/>
+                        <outlet property="linkToCall" destination="OMy-fK-d4Z" id="o31-9s-r3k"/>
                         <outlet property="linkToHours" destination="C60-09-fBT" id="riw-Dt-tbI"/>
                         <outlet property="menuButton" destination="OpA-rf-WJa" id="WrK-rg-jHz"/>
                         <outlet property="menuView" destination="MeO-Fy-vhU" id="DAE-iM-0Dm"/>
                         <outlet property="movingImage" destination="MAe-CF-4aj" id="UKf-OZ-Zpb"/>
+                        <outlet property="news" destination="YwG-b6-kmz" id="mpa-dG-aNR"/>
+                        <outlet property="newsTimeStamp" destination="Vda-TY-CAl" id="str-ep-pD7"/>
+                        <outlet property="newsTitle" destination="NSa-d5-lqL" id="wNG-XL-Fed"/>
                         <outlet property="scrollView" destination="5qk-Ti-BaX" id="Civ-MP-R57"/>
                         <outlet property="todayHours" destination="jpT-VR-R7s" id="izg-Rx-Qzc"/>
                         <segue destination="2XT-2C-yKQ" kind="push" identifier="hours" id="DPE-Sa-bPd"/>
@@ -1123,8 +1136,17 @@
     <resources>
         <image name="11497631615_58cdb0bd24_o.jpg" width="1800" height="1200"/>
         <image name="background_feature_gradient.png" width="640" height="286"/>
+        <image name="icon_bookshelf.png" width="112" height="115"/>
+        <image name="icon_calendar.png" width="101" height="123"/>
+        <image name="icon_databases.png" width="118" height="115"/>
+        <image name="icon_faq.png" width="67" height="117"/>
+        <image name="icon_feedback.png" width="110" height="116"/>
+        <image name="icon_menu_closebutton.png" width="159" height="18"/>
+        <image name="icon_menu_phone.png" width="201" height="21"/>
         <image name="icon_menubutton.png" width="227" height="279"/>
+        <image name="icon_newsfeed.png" width="110" height="115"/>
         <image name="libraries-poly.png" width="985" height="113"/>
+        <image name="line_menu_footer.png" width="622" height="5"/>
         <image name="logo_white_nyu" width="331" height="113"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1133,11 +1155,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="DPE-Sa-bPd"/>
-        <segue reference="wpu-SK-dC9"/>
-        <segue reference="bVR-eE-ZB3"/>
-        <segue reference="Mxy-w5-Vqt"/>
-        <segue reference="tMj-xN-1Uw"/>
         <segue reference="12u-58-OqE"/>
+        <segue reference="G2i-9c-1mF"/>
+        <segue reference="tMj-xN-1Uw"/>
+        <segue reference="wpu-SK-dC9"/>
+        <segue reference="Mxy-w5-Vqt"/>
+        <segue reference="DPE-Sa-bPd"/>
     </inferredMetricsTieBreakers>
 </document>

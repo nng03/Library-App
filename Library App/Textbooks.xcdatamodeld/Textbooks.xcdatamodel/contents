@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Author_Textbook" representedClassName="Author_Textbook" syncable="YES">
         <attribute name="author_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="idd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -25,6 +25,14 @@
         <attribute name="idd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="textbook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course_Textbook" inverseName="course" inverseEntity="Course_Textbook" syncable="YES"/>
     </entity>
+    <entity name="HoursCache" representedClassName="HoursCache" syncable="YES">
+        <attribute name="todayHours" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="NewsFeedCache" representedClassName="NewsFeedCache" syncable="YES">
+        <attribute name="newsBody" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Textbook" representedClassName="Textbook" syncable="YES">
         <attribute name="cover_image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idd" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -39,5 +47,7 @@
         <element name="Course_Textbook" positionX="0" positionY="0" width="128" height="120"/>
         <element name="Courses" positionX="0" positionY="0" width="128" height="105"/>
         <element name="Textbook" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="HoursCache" positionX="27" positionY="72" width="128" height="60"/>
+        <element name="NewsFeedCache" positionX="45" positionY="81" width="128" height="90"/>
     </elements>
 </model>

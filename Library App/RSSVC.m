@@ -47,7 +47,6 @@
 	[feedParser stopParsing];
 	[feedParser parse];
 	self.tableView.userInteractionEnabled = NO;
-	self.tableView.alpha = 0.3;
 }
 
 - (void)updateTableWithParsedItems {

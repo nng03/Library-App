@@ -171,4 +171,30 @@
     return course_book;
 }
 
+- (NSMutableArray *)getAllHoursCache
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"HoursCache"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedHoursCache = [self.managedObjectContext executeFetchRequest:fetchRequest
+                                                                               error:&error];
+    NSMutableArray *hoursCache = [[NSMutableArray alloc] initWithArray:fetchedHoursCache];
+    return hoursCache;
+}
+
+- (NSMutableArray *)getallNewsFeedCache
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"NewsFeedCache"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *fetchedNewsCache = [self.managedObjectContext executeFetchRequest:fetchRequest
+                                                                         error:&error];
+    NSMutableArray *newsCache = [[NSMutableArray alloc] initWithArray:fetchedNewsCache];
+    return newsCache;
+}
+
 @end

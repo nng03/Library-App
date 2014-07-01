@@ -35,8 +35,6 @@
     self.authorNameTextField.delegate = self;
     self.courseCodeTextField.delegate = self;
     self.courseNameTextField.delegate = self;
-//    [self.tableView setContentInset:UIEdgeInsetsMake(25, 0, 0, 0)];
-//    [self.tableView setScrollIndicatorInsets:UIEdgeInsetsMake(25, 0, 0, 0)];
 }
 
 - (IBAction)done:(id)sender

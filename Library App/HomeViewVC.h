@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWFeedParser.h"
+#import "MWFeedInfo.h"
+#import "NSString+HTML.h"
 
-@interface HomeViewVC : UIViewController
+@interface HomeViewVC : UIViewController <MWFeedParserDelegate>
+{
+	MWFeedParser *feedParser;
+	NSMutableArray *parsedItems;
+	NSArray *itemsToDisplay;
+	NSDateFormatter *formatter;
+}
+
+@property (strong ,nonatomic) NSArray *itemsToDisplay;
 
 @end

@@ -8,8 +8,13 @@
 
 #import "HomeViewVC.h"
 #import "GoogleCal.h"
+#import "HoursCache.h"
+#import "NewsFeedCache.h"
+#import "AppDelegate.h"
+#import "Reachability.h"
 
 @interface HomeViewVC ()
+@property (weak, nonatomic) IBOutlet UIButton *linkToCall;
 @property (weak, nonatomic) IBOutlet UIImageView *movingImage;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
@@ -20,12 +25,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *todayHours;
 @property (weak, nonatomic) IBOutlet UILabel *currentDay;
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
+@property (weak, nonatomic) IBOutlet UILabel *newsTitle;
+@property (weak, nonatomic) IBOutlet UILabel *newsTimeStamp;
+@property (weak, nonatomic) IBOutlet UILabel *news;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) BOOL movedUp;
 @property (nonatomic) BOOL menuButtonPressed;
+@property (nonatomic) BOOL shouldCache;
+@property (strong, nonatomic) Reachability *internetReachableFoo;
 
 @end
 
 @implementation HomeViewVC
+
+@synthesize itemsToDisplay, internetReachableFoo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,11 +49,44 @@
     return self;
 }
 
+- (void)loadNewsAndCalendar
+{
+    __weak typeof(self) weakSelf = self;
+    internetReachableFoo = [Reachability reachabilityWithHostname:@"www.google.com"];
+    
+    // Internet is reachable
+    internetReachableFoo.reachableBlock = ^(Reachability*reach)
+    {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf loadCalendarData];
+            [weakSelf loadNewsFeed];
+        });
+    };
+    
+    // Internet is not reachable
+    internetReachableFoo.unreachableBlock = ^(Reachability*reach)
+    {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf loadCalendarNoInternet];
+            [weakSelf loadNewsFeedNoInternet];
+        });
+    };
+    
+    [internetReachableFoo startNotifier];
+}
+
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Cache Setup
+    
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    self.managedObjectContext = appDelegate.managedObjectContext;
     
     // Current Date
     
@@ -50,13 +96,14 @@
     NSString* currentDayName = [dateFormat stringFromDate:now];
     [dateFormat setDateFormat:@"MMMM dd, yyyy"];
     NSString* currentDayDate = [dateFormat stringFromDate:now];
-    UIFont *currentDayNameFont = [UIFont fontWithName:@"Helvetica-Neue-Condensed-Black" size:14.0];
+    UIFont *currentDayNameFont = [UIFont fontWithName:@"Helvetica-Neue-Condensed-Black" size:12.0];
     UIFont *currentDayDateFont = [UIFont fontWithName:@"Helvetica-Neue-Condensed-Bold" size:24.0];
     UIColor *dateColor = [UIColor whiteColor];
+    UIColor *currentDateColor = UIColorFromRGB(0xcca6da);
     NSDictionary *dayAttributes = [NSDictionary dictionaryWithObjectsAndKeys:currentDayDateFont, NSFontAttributeName, dateColor, NSForegroundColorAttributeName, nil];
     NSMutableAttributedString *day = [[NSMutableAttributedString alloc] initWithString:currentDayName attributes:dayAttributes];
     [self.currentDay setAttributedText:day];
-    NSDictionary *dateAttributes = [NSDictionary dictionaryWithObjectsAndKeys:currentDayNameFont, NSFontAttributeName, dateColor, NSForegroundColorAttributeName, nil];
+    NSDictionary *dateAttributes = [NSDictionary dictionaryWithObjectsAndKeys:currentDayNameFont, NSFontAttributeName, currentDateColor, NSForegroundColorAttributeName, nil];
     NSMutableAttributedString *date = [[NSMutableAttributedString alloc] initWithString:currentDayDate attributes:dateAttributes];
     [self.currentDate setAttributedText:date];
     
@@ -102,25 +149,132 @@
     [self.menuView addGestureRecognizer:swipeLeftMenu];
     [self.menuView addGestureRecognizer:swipeRightMenu];
     
-    // Load Calendar Data
+    // Load Calendar and News Data
     
-    [self loadCalendarData];
+    [self loadNewsAndCalendar];
+
 }
 
 - (void)loadCalendarData
 {
-    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"https://www.google.com/calendar/feeds/9var82lp3jhu0eeu5cqthc2bd8%40group.calendar.google.com/public/basic?alt=jsonc&orderby=starttime&max-results=7&singleevents=true&sortorder=ascending&futureevents=true"]];
-        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *hoursData = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"https://www.google.com/calendar/feeds/9var82lp3jhu0eeu5cqthc2bd8%40group.calendar.google.com/public/basic?alt=jsonc&orderby=starttime&max-results=7&singleevents=true&sortorder=ascending&futureevents=true"]];
+        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:hoursData waitUntilDone:YES];
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            
+        });
     });
+}
+
+- (void)feedParserDidStart:(MWFeedParser *)parser
+{
+	NSLog(@"Started Parsing: %@", parser.url);
+}
+
+- (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info
+{
+	NSLog(@"Parsed Feed Info: “%@”", info.title);
+}
+
+- (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item
+{
+    NSLog(@"Parsed Feed Item: “%@”", item.title);
+	if (item) [parsedItems addObject:item];
+}
+
+- (void)feedParserDidFinish:(MWFeedParser *)parser
+{
+    NSLog(@"Finished Parsing%@", (parser.stopped ? @" (Stopped)" : @""));
+    
+    // Delete old news cache
+    
+    NSString *entityDescription = @"NewsFeedCache";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *items = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if ([items count] != 0)
+    {
+        [_managedObjectContext deleteObject:[items firstObject]];
+    }
+    
+    // Set up labels
+    
+    MWFeedItem *item = [parsedItems firstObject];
+    self.itemsToDisplay = [parsedItems sortedArrayUsingDescriptors:
+						   [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"date"
+                                                                            ascending:NO]]];
+    UIFont *newsTitleFont = [UIFont fontWithName:@"Helvetica-Nueu-Bold" size:15.0];
+    UIColor *newsTitleColor = [UIColor blackColor];
+    NSDictionary *newsTitleAttributes = [NSDictionary dictionaryWithObjectsAndKeys:newsTitleFont, NSFontAttributeName, newsTitleColor, NSForegroundColorAttributeName, nil];
+    NSMutableAttributedString *newsTitle = [[NSMutableAttributedString alloc] initWithString:item.title attributes:newsTitleAttributes];
+    [self.newsTitle setAttributedText:newsTitle];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMMM d, y, h:ss a"];
+    UIFont *newsTimeStampFont = [UIFont fontWithName:@"Helvetica-Neueu" size:10.0];
+    UIColor *newsTimeStampColor = UIColorFromRGB(0x808080);
+    NSDictionary *newsTimeStampAttributes = [NSDictionary dictionaryWithObjectsAndKeys:newsTimeStampFont, NSFontAttributeName, newsTimeStampColor, NSForegroundColorAttributeName, nil];
+    NSMutableAttributedString *newsTimeStamp = [[NSMutableAttributedString alloc] initWithString:[dateFormatter stringFromDate:item.date] attributes:newsTimeStampAttributes];
+    [self.newsTimeStamp setAttributedText:newsTimeStamp];
+    UIFont *newsFont = [UIFont fontWithName:@"Helvetica-Neueu" size:15.0];
+    UIColor *newsColor = [UIColor blackColor];
+    NSMutableParagraphStyle *newsParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+    newsParagraphStyle.alignment = NSTextAlignmentLeft;
+    newsParagraphStyle.minimumLineHeight = 15.0;
+    NSDictionary *newsAttributes = [NSDictionary dictionaryWithObjectsAndKeys:newsFont, NSFontAttributeName, newsColor, NSForegroundColorAttributeName, newsParagraphStyle, NSParagraphStyleAttributeName, nil];
+    NSMutableAttributedString *news = [[NSMutableAttributedString alloc] initWithString:[item.summary stringByConvertingHTMLToPlainText] attributes:newsAttributes];
+    [self.news setAttributedText:news];
+    
+    // Create new cache
+    
+    NewsFeedCache *cache = [NSEntityDescription insertNewObjectForEntityForName:@"NewsFeedCache"
+                                                         inManagedObjectContext:self.managedObjectContext];
+    cache.title = item.title;
+    cache.timeStamp = [dateFormatter stringFromDate:item.date];
+    cache.newsBody = [item.summary stringByConvertingHTMLToPlainText];
+    NSError *error1;
+    if (![self.managedObjectContext save:&error1]) {
+        NSLog(@"Whoops, couldn't save: %@", [error1 localizedDescription]);
+    }
+    
+}
+
+- (void)feedParser:(MWFeedParser *)parser didFailWithError:(NSError *)error {
+	NSLog(@"Finished Parsing With Error: %@", error);
+    if (parsedItems.count == 0) {}
+    else {
+        // Failed but some items parsed, so show and inform of error
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Parsing Incomplete"
+                                                        message:@"There was an error during the parsing of this feed. Not all of the feed items could parsed."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Dismiss"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 - (void)fetchedData:(NSData *)data
 {
+    // Delete Previous Cache
+    
+    NSString *entityDescription = @"HoursCache";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:_managedObjectContext];
+    [fetchRequest setEntity:entity];
     NSError *error;
+    NSArray *items = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if ([items count] != 0)
+    {
+        [_managedObjectContext deleteObject:[items firstObject]];
+    }
+    
+    // New Data
+    
+    NSError *jsonError;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
                                                     options:kNilOptions
-                                                      error:&error];
+                                                      error:&jsonError];
     NSDictionary *temp = [json objectForKey:@"data"];
     NSArray *days = [temp objectForKey:@"items"];
     NSDictionary *temp2 = [days firstObject];
@@ -133,17 +287,99 @@
         NSString *string = @"9AM - 8PM";
         NSMutableAttributedString *todaysHours = [[NSMutableAttributedString alloc] initWithString:string attributes:todaysHoursAttributes];
         [self.todayHours setAttributedText:todaysHours];
+        HoursCache *hour = [NSEntityDescription insertNewObjectForEntityForName:@"HoursCache"
+                                                         inManagedObjectContext:self.managedObjectContext];
+        hour.todayHours = string;
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
     } else if ([hours isEqualToString:@"noon-6pm"])
     {
         NSString *string = @"12PM - 6PM";
         NSMutableAttributedString *todaysHours = [[NSMutableAttributedString alloc] initWithString:string attributes:todaysHoursAttributes];
         [self.todayHours setAttributedText:todaysHours];
+        HoursCache *hour = [NSEntityDescription insertNewObjectForEntityForName:@"HoursCache"
+                                                         inManagedObjectContext:self.managedObjectContext];
+        hour.todayHours = string;
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
     } else if ([hours isEqualToString:@"CLOSED"])
     {
         NSString *string = @"CLOSED";
         NSMutableAttributedString *todaysHours = [[NSMutableAttributedString alloc] initWithString:string attributes:todaysHoursAttributes];
         [self.todayHours setAttributedText:todaysHours];
+        HoursCache *hour = [NSEntityDescription insertNewObjectForEntityForName:@"HoursCache"
+                                                         inManagedObjectContext:self.managedObjectContext];
+        hour.todayHours = string;
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
     }
+}
+
+- (void)loadNewsFeed
+{
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    itemsToDisplay = [[NSArray alloc] init];
+    parsedItems = [[NSMutableArray alloc] init];
+    NSURL *feedURL = [NSURL URLWithString:@"http://library.poly.edu/news/feed"];
+    feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
+    feedParser.delegate = self;
+    feedParser.feedParseType = ParseTypeFull; // Parse feed info and all items
+    feedParser.connectionType = ConnectionTypeAsynchronously;
+    [feedParser parse];
+}
+
+- (void)loadCalendarNoInternet
+{
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSMutableArray *cache = [delegate getAllHoursCache];
+    HoursCache *string = [cache firstObject];
+    UIFont *todaysHoursFont = [UIFont fontWithName:@"Helvetica-Nueu-Condensed-Bold" size:24.0];
+    UIColor *todaysHoursColor = [UIColor whiteColor];
+    NSDictionary *todaysHoursAttributes = [NSDictionary dictionaryWithObjectsAndKeys:todaysHoursFont, NSFontAttributeName, todaysHoursColor, NSForegroundColorAttributeName, nil];
+    NSMutableAttributedString *hours = [[NSMutableAttributedString alloc] initWithString:string.todayHours attributes:todaysHoursAttributes];
+    [self.todayHours setAttributedText:hours];
+}
+
+- (void)loadNewsFeedNoInternet
+{
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    NSMutableArray *cache = [delegate getAllNewsFeedCache];
+    NewsFeedCache *string = [cache firstObject];
+    
+    // News Title
+    
+    UIFont *newsTitleFont = [UIFont fontWithName:@"Helvetica-Nueu-Bold" size:15.0];
+    UIColor *newsTitleColor = [UIColor blackColor];
+    NSDictionary *newsTitleAttributes = [NSDictionary dictionaryWithObjectsAndKeys:newsTitleFont, NSFontAttributeName, newsTitleColor, NSForegroundColorAttributeName, nil];
+    NSMutableAttributedString *newsTitle = [[NSMutableAttributedString alloc] initWithString:string.title attributes:newsTitleAttributes];
+    [self.newsTitle setAttributedText:newsTitle];
+    
+    // News Time Stamp
+    
+    UIFont *newsTimeStampFont = [UIFont fontWithName:@"Helvetica-Neueu" size:10.0];
+    UIColor *newsTimeStampColor = UIColorFromRGB(0x808080);
+    NSDictionary *newsTimeStampAttributes = [NSDictionary dictionaryWithObjectsAndKeys:newsTimeStampFont, NSFontAttributeName, newsTimeStampColor, NSForegroundColorAttributeName, nil];
+    NSMutableAttributedString *newsTimeStamp = [[NSMutableAttributedString alloc] initWithString:string.timeStamp attributes:newsTimeStampAttributes];
+    [self.newsTimeStamp setAttributedText:newsTimeStamp];
+    
+    // News Body
+    
+    UIFont *newsFont = [UIFont fontWithName:@"Helvetica-Neueu" size:15.0];
+    UIColor *newsColor = [UIColor blackColor];
+    NSMutableParagraphStyle *newsParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+    newsParagraphStyle.alignment = NSTextAlignmentLeft;
+    newsParagraphStyle.minimumLineHeight = 15.0;
+    NSDictionary *newsAttributes = [NSDictionary dictionaryWithObjectsAndKeys:newsFont, NSFontAttributeName, newsColor, NSForegroundColorAttributeName, newsParagraphStyle, NSParagraphStyleAttributeName, nil];
+    NSMutableAttributedString *news = [[NSMutableAttributedString alloc] initWithString:string.newsBody attributes:newsAttributes];
+    [self.news setAttributedText:news];
 }
 
 #define AMOUNT_TO_MOVE_UP 300.0
@@ -161,10 +397,7 @@
         self.movedUp = NO;
     } else if (!self.movedUp && self.menuButtonPressed)
     {
-
-    } else if (self.movedUp && self.menuButtonPressed)
-    {
-        
+        [self moveScrollViewUpWhenBlocked];
     }
 }
 
@@ -177,9 +410,7 @@
         self.movedUp = YES;
     } else if (!self.movedUp && self.menuButtonPressed)
     {
-        [self closeMenu:gesture];
-        [self moveScrollViewUp];
-        self.movedUp = YES;
+        [self moveScrollViewUpWhenBlocked];
     }
 }
 
@@ -187,11 +418,6 @@
 {
     if (self.movedUp && !self.menuButtonPressed)
     {
-        [self moveScrollViewDown];
-        self.movedUp = NO;
-    } else if (self.movedUp && self.menuButtonPressed)
-    {
-        [self closeMenu:gesture];
         [self moveScrollViewDown];
         self.movedUp = NO;
     }
@@ -207,7 +433,7 @@
                          [self.menuView setAlpha:0.0f];
                      }
                      completion:^(BOOL finished){
-                         [self.menuView setAlpha:0.7f];
+                         [self.menuView setAlpha:0.8f];
                          [self.view sendSubviewToBack:self.menuView];
                          self.menuButton.hidden = NO;
                      }];
@@ -223,7 +449,7 @@
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          [self.menuView setAlpha:0.0f];
-                         [self.menuView setAlpha:0.7f];
+                         [self.menuView setAlpha:0.8f];
                      }
                      completion:^(BOOL finished){
                          
@@ -237,7 +463,7 @@
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
-                         [self.menuView setAlpha:0.7f];
+                         [self.menuView setAlpha:0.8f];
                          [self.menuView setAlpha:0.0f];
                      }
                      completion:^(BOOL finished){
@@ -285,6 +511,42 @@
                      }];
 }
 
+- (void)moveScrollViewUpWhenBlocked
+{
+    __block NSMutableArray* animationBlocks = [NSMutableArray new];
+    typedef void(^animationBlock)(BOOL);
+    
+    animationBlock (^getNextAnimation)() = ^{
+        
+        if ([animationBlocks count] > 0){
+            animationBlock block = (animationBlock)[animationBlocks objectAtIndex:0];
+            [animationBlocks removeObjectAtIndex:0];
+            return block;
+        } else {
+            return ^(BOOL finished){
+                animationBlocks = nil;
+            };
+        }
+    };
+    
+    [animationBlocks addObject:^(BOOL finished){
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+            [self.menuView setAlpha:0.0f];
+        } completion: getNextAnimation()];
+    }];
+    
+    [animationBlocks addObject:^(BOOL finished){
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+            [self moveScrollViewUp];
+        } completion: getNextAnimation()];
+    }];
+    
+    self.movedUp = YES;
+    self.menuButtonPressed = NO;
+    
+    getNextAnimation()(YES);
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -293,6 +555,12 @@
 - (IBAction)linkToHours:(id)sender
 {
     [self performSegueWithIdentifier:@"hours" sender:self];
+}
+
+- (IBAction)linkToCall:(id)sender
+{
+    NSURL *url = [NSURL URLWithString:@"tel://718-260-3530"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end

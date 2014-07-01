@@ -9,7 +9,7 @@
 #import "viewTextbook.h"
 #import "TextbookC.h"
 #import "AppDelegate.h"
-#import "YOSSocial.h"
+//#import "YOSSocial.h"
 
 @implementation viewTextbook
 

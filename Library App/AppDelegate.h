@@ -21,5 +21,7 @@
 - (NSMutableArray *)getAllCourses;
 - (NSMutableArray *)getAllCourse_Books;
 - (NSMutableArray *)getAllAuthor_Books;
+- (NSMutableArray *)getAllHoursCache;
+- (NSMutableArray *)getAllNewsFeedCache;
 
 @end
