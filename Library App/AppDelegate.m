@@ -184,7 +184,7 @@
     return hoursCache;
 }
 
-- (NSMutableArray *)getallNewsFeedCache
+- (NSMutableArray *)getAllNewsFeedCache
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"NewsFeedCache"

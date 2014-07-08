@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Epl-j6-GTz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Epl-j6-GTz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -641,7 +641,7 @@
                                         <rect key="frame" x="20" y="47" width="120" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Wednesday">
+                                            <fragment content="Today">
                                                 <attributes>
                                                     <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <font key="NSFont" size="24" name="HelveticaNeue-CondensedBlack"/>
@@ -757,11 +757,11 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="NSa-d5-lqL">
-                                        <rect key="frame" x="20" y="49" width="280" height="54"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSa-d5-lqL">
+                                        <rect key="frame" x="20" y="39" width="280" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Portals one-to-one e-markets matrix convergence">
+                                            <fragment content="Portals one-to-one e-markets matrix">
                                                 <attributes>
                                                     <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="NSColor" red="0.019607843831181526" green="0.015686275437474251" blue="0.0078431377187371254" alpha="1" colorSpace="deviceRGB"/>
@@ -775,7 +775,7 @@
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vda-TY-CAl">
-                                        <rect key="frame" x="20" y="101" width="134" height="21"/>
+                                        <rect key="frame" x="20" y="82" width="134" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Jun 4, 2014, 11:42:44 AM">
@@ -789,25 +789,21 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-b6-kmz">
-                                        <rect key="frame" x="20" y="130" width="280" height="123"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7i-vN-Ka4">
+                                        <rect key="frame" x="15" y="111" width="280" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <attributedString key="attributedText">
                                             <fragment>
-                                                <string key="content">Extensible eyeballs repurpose optimize users share B2C post, back-end models next-generation embrace proactive turn-key? Viral remix seamless harness markets 24/365 enable, transform mashups integrated compelling deliverables create; widgets mesh drive. Utilize value-added metrics proactive partnerships impactful utilize podcasts productize: visionary infomediaries--e-services convergence evolve, harness harness peer-to-peer. Deliverables folksonomies value-added dynamic schemas integrate share implement engineer holistic. Podcasting embrace, web-enabled rich-clientAPIs; bricks-and-clicks enable, bandwidth beta-test vortals networking aggregate synergies integrate visionary cutting-edge vortals incentivize intuitive.
-</string>
+                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <attributes>
-                                                    <color key="NSBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="NSColor" red="0.023529414087533951" green="0.015686275437474251" blue="0.035294119268655777" alpha="1" colorSpace="deviceRGB"/>
                                                     <font key="NSFont" size="12" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="24.375" minimumLineHeight="24" defaultTabInterval="36">
-                                                        <tabStops/>
-                                                    </paragraphStyle>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
@@ -836,7 +832,7 @@
                         <outlet property="menuButton" destination="OpA-rf-WJa" id="WrK-rg-jHz"/>
                         <outlet property="menuView" destination="MeO-Fy-vhU" id="DAE-iM-0Dm"/>
                         <outlet property="movingImage" destination="MAe-CF-4aj" id="UKf-OZ-Zpb"/>
-                        <outlet property="news" destination="YwG-b6-kmz" id="mpa-dG-aNR"/>
+                        <outlet property="news" destination="H7i-vN-Ka4" id="8vh-ry-Rxs"/>
                         <outlet property="newsTimeStamp" destination="Vda-TY-CAl" id="str-ep-pD7"/>
                         <outlet property="newsTitle" destination="NSa-d5-lqL" id="wNG-XL-Fed"/>
                         <outlet property="scrollView" destination="5qk-Ti-BaX" id="Civ-MP-R57"/>
@@ -1155,11 +1151,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="12u-58-OqE"/>
-        <segue reference="G2i-9c-1mF"/>
-        <segue reference="tMj-xN-1Uw"/>
-        <segue reference="wpu-SK-dC9"/>
         <segue reference="Mxy-w5-Vqt"/>
+        <segue reference="tMj-xN-1Uw"/>
+        <segue reference="uFB-fC-Ev2"/>
+        <segue reference="G2i-9c-1mF"/>
         <segue reference="DPE-Sa-bPd"/>
+        <segue reference="12u-58-OqE"/>
     </inferredMetricsTieBreakers>
 </document>

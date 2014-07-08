@@ -156,13 +156,6 @@
 			remoteGlobalIDString = EA5D589D1896FF39005A9C47;
 			remoteInfo = "Library App";
 		};
-		EAFFF8C318EF3D6D00510640 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EAFFF8BB18EF3D6D00510640 /* YahooSocialSdk.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = YahooSocialSdk;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -277,7 +270,6 @@
 		EABFDD8E18A54B050044E7E4 /* FeedbackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
 		EAF8434B1937930B0068B391 /* FAQVCc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQVCc.h; sourceTree = "<group>"; };
 		EAF8434C1937930B0068B391 /* FAQVCc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQVCc.m; sourceTree = "<group>"; };
-		EAFFF8BB18EF3D6D00510640 /* YahooSocialSdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YahooSocialSdk.xcodeproj; path = "../../../yos-social-objc-master/YahooSocialSdk.xcodeproj"; sourceTree = "<group>"; };
 		EAFFF8D118EF3F0F00510640 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		EAFFF8D218EF3F0F00510640 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		EAFFF8D318EF3F0F00510640 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -433,7 +425,6 @@
 		EA5D58A71896FF39005A9C47 /* Library App */ = {
 			isa = PBXGroup;
 			children = (
-				EAFFF8BB18EF3D6D00510640 /* YahooSocialSdk.xcodeproj */,
 				EA63478118CA5A2300BEFDC3 /* Unused For now */,
 				EA29131718A2A3E600CC0CFD /* RSS Feed */,
 				EA5D58B01896FF39005A9C47 /* AppDelegate.h */,
@@ -550,14 +541,6 @@
 				EA1115ED19521AEC00516017 /* icon_newsfeed.png */,
 			);
 			path = icons;
-			sourceTree = "<group>";
-		};
-		EAFFF8BC18EF3D6D00510640 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EAFFF8C418EF3D6D00510640 /* YahooSocialSdk.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		EAFFF8D018EF3F0F00510640 /* json-framework */ = {
@@ -747,10 +730,6 @@
 					ProductGroup = EA44EEB3194A07B90012F79A /* Products */;
 					ProjectRef = EA44EEB2194A07B90012F79A /* mailcore2.xcodeproj */;
 				},
-				{
-					ProductGroup = EAFFF8BC18EF3D6D00510640 /* Products */;
-					ProjectRef = EAFFF8BB18EF3D6D00510640 /* YahooSocialSdk.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -794,13 +773,6 @@
 			fileType = wrapper.framework;
 			path = MailCore.framework;
 			remoteRef = EA44EEC2194A07B90012F79A /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		EAFFF8C418EF3D6D00510640 /* YahooSocialSdk.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = YahooSocialSdk.framework;
-			remoteRef = EAFFF8C318EF3D6D00510640 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

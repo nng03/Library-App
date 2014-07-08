@@ -27,8 +27,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentDate;
 @property (weak, nonatomic) IBOutlet UILabel *newsTitle;
 @property (weak, nonatomic) IBOutlet UILabel *newsTimeStamp;
-@property (weak, nonatomic) IBOutlet UILabel *news;
+@property (weak, nonatomic) IBOutlet UITextView *news;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSMutableArray *hoursCache;
+@property (strong, nonatomic) NSMutableArray *newsFeedCache;
 @property (nonatomic) BOOL movedUp;
 @property (nonatomic) BOOL menuButtonPressed;
 @property (nonatomic) BOOL shouldCache;
@@ -85,8 +87,12 @@
     
     // Cache Setup
     
+    self.hoursCache = [[NSMutableArray alloc] init];
+    self.newsFeedCache = [[NSMutableArray alloc] init];
     AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
     self.managedObjectContext = appDelegate.managedObjectContext;
+    self.hoursCache = [appDelegate getAllHoursCache];
+    self.newsFeedCache = [appDelegate getAllNewsFeedCache];
     
     // Current Date
     
@@ -197,6 +203,10 @@
     if ([items count] != 0)
     {
         [_managedObjectContext deleteObject:[items firstObject]];
+        if (![_managedObjectContext save:&error])
+        {
+            NSLog(@"Error deleting %@ - error:%@", entityDescription, error);
+        }
     }
     
     // Set up labels
@@ -217,13 +227,15 @@
     NSDictionary *newsTimeStampAttributes = [NSDictionary dictionaryWithObjectsAndKeys:newsTimeStampFont, NSFontAttributeName, newsTimeStampColor, NSForegroundColorAttributeName, nil];
     NSMutableAttributedString *newsTimeStamp = [[NSMutableAttributedString alloc] initWithString:[dateFormatter stringFromDate:item.date] attributes:newsTimeStampAttributes];
     [self.newsTimeStamp setAttributedText:newsTimeStamp];
-    UIFont *newsFont = [UIFont fontWithName:@"Helvetica-Neueu" size:15.0];
+    UIFont *newsFont = [UIFont fontWithName:@"Helvetica-Neueu" size:12.0];
     UIColor *newsColor = [UIColor blackColor];
     NSMutableParagraphStyle *newsParagraphStyle = [[NSMutableParagraphStyle alloc] init];
     newsParagraphStyle.alignment = NSTextAlignmentLeft;
     newsParagraphStyle.minimumLineHeight = 15.0;
     NSDictionary *newsAttributes = [NSDictionary dictionaryWithObjectsAndKeys:newsFont, NSFontAttributeName, newsColor, NSForegroundColorAttributeName, newsParagraphStyle, NSParagraphStyleAttributeName, nil];
     NSMutableAttributedString *news = [[NSMutableAttributedString alloc] initWithString:[item.summary stringByConvertingHTMLToPlainText] attributes:newsAttributes];
+    self.news.contentMode = UIViewContentModeTop;
+    self.news.textAlignment = NSTextAlignmentLeft;
     [self.news setAttributedText:news];
     
     // Create new cache
@@ -267,6 +279,10 @@
     if ([items count] != 0)
     {
         [_managedObjectContext deleteObject:[items firstObject]];
+        if (![_managedObjectContext save:&error])
+        {
+            NSLog(@"Error deleting %@ - error:%@", entityDescription, error);
+        }
     }
     
     // New Data
@@ -338,8 +354,7 @@
 
 - (void)loadCalendarNoInternet
 {
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    NSMutableArray *cache = [delegate getAllHoursCache];
+    NSMutableArray *cache = self.hoursCache;
     HoursCache *string = [cache firstObject];
     UIFont *todaysHoursFont = [UIFont fontWithName:@"Helvetica-Nueu-Condensed-Bold" size:24.0];
     UIColor *todaysHoursColor = [UIColor whiteColor];
@@ -350,8 +365,7 @@
 
 - (void)loadNewsFeedNoInternet
 {
-    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-    NSMutableArray *cache = [delegate getAllNewsFeedCache];
+    NSMutableArray *cache = self.newsFeedCache;
     NewsFeedCache *string = [cache firstObject];
     
     // News Title
@@ -490,7 +504,7 @@
                          self.movedUp = YES;
                      }
                      completion:^(BOOL finished){
-                         
+
                      }];
 }
 
